@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>FitnessNews</title>
+	<link rel="stylesheet" type="text/css" href="../styles/BasicStructure.css">
 </head>
 <body>
 
@@ -20,12 +21,25 @@
     </header>
 
     <div class="container">
+    	<!-- Formulaire de connexion -->
+    	<form method="POST" action="../src/Login.php">
+
+    		<label>Identifiant</label>
+			<input type="text" name="Idconn" title="Identifiant" autocomplete="">
+
+    		<label>Mot de Passe</label>
+			<input type="passeword" name="Mdp">
+
+    		<input type="submit" name="connexion" value="Se connecter">
+
+    	</form>
       
     </div>
 
 
-
-
+    <footer>
+      
+    </footer> 
 
 
 </body>
