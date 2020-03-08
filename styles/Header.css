@@ -1,0 +1,24 @@
+header{
+	background-color: #11ECCE;
+	background-image: url('../ressources/HeaderImg1.jfif');
+	background-size: cover;
+	height: 20%;
+}
+
+/** Titre de notre Site affichez en tête des pages*/
+.TitreduSite{
+	background-color: red;
+	text-align: center;
+}
+
+.menu{
+	background-color: #95D100;
+}
+
+.navigation a{
+	text-decoration: none;
+	font-size: 20px;
+	background-color: red;
+	color : blue;
+	text-align: center;
+}
