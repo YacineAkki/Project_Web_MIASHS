@@ -4,7 +4,7 @@ nav.menu{
 
 	background-image: url('../ressources/HeaderImage.png');
 	background-size:100% 300px;
-	height: 300px;
+	height: 230px;
 	width: 100%;
 	line-height: 66px;
 
@@ -30,8 +30,8 @@ h1.titre{
 }
 /**boîte contenant la navigation inclus dans nav.menu*/
 div.navbox{
-
 	float : right;
+
 }
 /**boîte contenant la navigation inclus dans navbox*/
 div.navbox a{
@@ -40,7 +40,7 @@ div.navbox a{
 	color : #ffff;
 	text-transform: uppercase;
 	font-weight: 700;
-	padding: 0px; margin: 0px 15px;
+	padding: 0px; margin: 0px 10px;
 	transition: all 0.3s ease-in-out; /** le temps pour que s'affiche un effet sur les élements a*/
 	border-bottom: 2px solid transparent; /**une bordure transparente pour ne pas qu'elle se charge et plus de fluidité*/
 	padding-bottom: 3px;
@@ -65,6 +65,7 @@ div.toggle{
 	align-items: center;
 	float: right;
 	cursor: pointer;
+
 }
 /** les traits blancs de l'hamburger*/
 span.toggleicons,span.toggleicons:before,span.toggleicons:after{
@@ -105,22 +106,20 @@ div.toggle span.toggleicons:after{
 
 
 /**Ce sont les modifications apportés lorsque la fenêtre sera réduite */
-@media only screen and (max-width: 888px){
+@media only screen and (max-width: 1200px){
 	html, body{
 		overflow-x: hidden;
 	}
-	nav.menu{
-		height: 150px;
-	}
+	
 	div.navbox{
 
 		position: absolute;
-		top: 150px;right: 0px;
+		top:0px;right: 0px;
 		width: 200px;height: 100%;
-		background-image: url(../ressources/NavMobile.jpg);
-		background-size: 200px 903px;
+		background-color: #88B3AD;
 		transform: translateX(100%);
 		transition: all 0.3s ease-in-out;
+		
 	}
 
 	div.navbox a{
@@ -132,6 +131,14 @@ div.toggle span.toggleicons:after{
 	}
 	div.toggle{
 		display: flex;
-		margin-top: 84px;
+		margin-right: 160px;
+	}
+
+	div.container-pers{
+
+	}
+
+	div.bas-page{
+
 	}
 }
