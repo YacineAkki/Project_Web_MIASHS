@@ -2,25 +2,25 @@
 <html>
 
   <head>
-
+    
     <meta charset="utf-8">
 
     <title>FitnessNews.com</title>
 
-    <link rel="stylesheet" type="text/css" href="styles/Normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/Footer.css">
     <link rel="stylesheet" type="text/css" href="styles/Header.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type=""></script>
 
   </head>
 
-  <body>
-    
-    <header>
+<body>
+  
+	<header>
 
           <nav class="menu">
-
-              <div class="inner">
+              
+            <div class="inner">
 
                 <div class="titrebox">
 
@@ -54,6 +54,8 @@
 
     <script src="scripts/app.js" type="text/javascript"></script>
 
+    
+
     <section class="container-pers">
       JE SUIS LE CONTENU PROPRE DE CHACUNE DES PAGES JE NE SUIS PAS LA MEME CHOSE
       QUE LES AUTRES
@@ -63,6 +65,7 @@
 
 
     <footer class="bas-page">
+
       <div class="inner">
         <div class="section">
           
@@ -74,35 +77,11 @@
           
         </div>
       </div>
+
     </footer> 
-	
 
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </body>
+    
+</body>
 </html>
