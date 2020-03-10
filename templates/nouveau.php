@@ -6,8 +6,8 @@
 
     <title>FitnessNews.com</title>
 
-    <link rel="stylesheet" type="text/css" href="styles/Footer.css">
-    <link rel="stylesheet" type="text/css" href="styles/Header.css">
+    <link rel="stylesheet" type="text/css" href="../styles/Footer.css">
+    <link rel="stylesheet" type="text/css" href="../styles/Header.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type=""></script>
 
