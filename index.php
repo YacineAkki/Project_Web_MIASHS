@@ -31,7 +31,7 @@
                 <div class="navbox">
 
                   <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
-                  <a href="templates/nouveau.php"><i class="fa fa-clipboard" aria-hidden="true"></i>S'inscrire</a> 
+                  <a href="templates/nouveau.php"><i class="fa fa-clipboard" aria-hidden="true"></i> S'inscrire</a> 
                   <a href="templates/Connexion.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
                   <a href="templates/Statistiques.php"><i class="fa fa-calculator" aria-hidden="true"></i> Statistiques</a>
                   <a href="templates/Contact.php"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>

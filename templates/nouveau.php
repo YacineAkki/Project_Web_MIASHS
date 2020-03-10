@@ -30,7 +30,7 @@
                 <div class="navbox">
 
                   <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
-                  <a href="nouveau.php"><i class="fa fa-clipboard" aria-hidden="true"></i>S'inscrire</a> 
+                  <a href="nouveau.php"><i class="fa fa-clipboard" aria-hidden="true"></i> S'inscrire</a> 
                   <a href="Connexion.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
                   <a href="Statistiques.php"><i class="fa fa-calculator" aria-hidden="true"></i> Statistiques</a>
                   <a href="Contact.php"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
