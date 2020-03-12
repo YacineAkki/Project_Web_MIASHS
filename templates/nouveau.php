@@ -51,7 +51,7 @@
 
     </header>
 
-    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="../scripts/app.js" type="text/javascript"></script>
 
     <section class="container-pers">
 

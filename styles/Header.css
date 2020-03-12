@@ -22,6 +22,7 @@ nav.menu{
 div.inner{ 
 	width: 90%;
 	margin : auto;
+	padding:   0px;
 }
 
 /**boîte contenant le titre inclus dans nav.menu*/
@@ -53,6 +54,7 @@ div.navbox a{
 	text-decoration: none;
 	color : #ffff;
 	text-transform: uppercase;
+	font-size: 14px;
 	font-weight: 700;
 	padding: 0px; margin: 0px 10px;
 	transition: all 0.3s ease-in-out; /** le temps pour que s'affiche un effet sur les élements a*/
@@ -67,7 +69,6 @@ div.navbox a:hover{
 }
 /**règles appliquées aux balises dont les styles est importé du site Fontawesome ce sont les logos*/
 div.navbox .fa{
-
 	margin-right: 5px;
 }
 /** La boîte enfermant l'hamburger*/
@@ -79,7 +80,8 @@ div.toggle{
 	align-items: center;
 	float: right;
 	cursor: pointer;
-
+	margin-top: 150px;
+	margin-right: 20px;
 }
 /** les traits blancs de l'hamburger*/
 span.toggleicons,span.toggleicons:before,span.toggleicons:after{
@@ -100,11 +102,18 @@ div.toggle span.toggleicons:after{
 	top: -14px;
 }
 
+
+
+/** Evénement JS*/
 /** Une variable qui pourra être attribué à un élement via un evenemtn js*/
 .navbox.is-open{
 	transform: translateX(0);
 }
 /**Pour faire une crois lorque que l'on click sur la div toggle*/
+.toggle.is-open{
+	transition: all 0.3s ease-in-out;
+	margin-right: 190px;
+}
 .toggle.is-open span.toggleicons{
 	background: transparent;
 }
@@ -121,10 +130,11 @@ div.toggle span.toggleicons:after{
 
 /**Ce sont les modifications apportés lorsque la fenêtre sera réduite */
 @media only screen and (max-width: 1200px){
+	/** Pour empêcher de voir la barre de navigation en glissant à droite*/
 	html, body{
 		overflow-x: hidden;
 	}
-	
+	/**On redéfinit la barre de nav quand la réduction décran est atteinte*/
 	div.navbox{
 
 		position: absolute;
@@ -136,7 +146,7 @@ div.toggle span.toggleicons:after{
 	}
 
 	div.navbox a{
-		display: block;
+		display:block;
 		text-align: center;
 		padding: 0px;margin:0px 20px;
 		height: 55px;
@@ -144,14 +154,7 @@ div.toggle span.toggleicons:after{
 	}
 	div.toggle{
 		display: flex;
-		margin-right: 160px;
 	}
 
-	div.container-pers{
 
-	}
-
-	div.bas-page{
-
-	}
 }
