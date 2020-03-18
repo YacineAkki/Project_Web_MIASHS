@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,,700,900|Roboto:300,500,900&display=swap');
+/* HEADER */
+html,body{
+    font-family: "Lato";
+    margin: 0px; padding: 0px;
+}
+header {
+    width: 100%;
+    position:fixed;
+    border-bottom: #DCDCDC 1px solid;
+}
+
+.logo-container {
+    margin: 10px 10px 10px 60px;
+    float: left;
+}
+
+#logo {
+    width: 50%;
+    text-align: center;
+}
+
+.top-menu-nav {
+    text-align: right;
+    margin-right: 3%;
+    margin-top: 55px;
+    font-family: "Lato";
+    font-weight: bold;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+}
+
+.top-menu li {
+    display: inline-block;
+}
+
+.top-menu a {
+
+    text-decoration: none;
+    color:#1e1e1e;
+    margin-right: 40px;
+    padding-bottom: 5px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.top-menu a > i{
+    margin-left: 4px;
+}
+
+#lang i{
+    margin-right: 3px;
+}
+#lang>a{
+    cursor: initial;
+}
+#eur{
+   color: #AEAAA9; 
+}
+
+.top-menu .link:hover{
+    border-color:#5fad4d;
+
+}
+
+#nav-moncompte{
+    border-left: #DCDCDC 1px solid;
+    border-right: #DCDCDC 1px solid;
+    padding-left: 35px;
+    margin-right: 10px;
+}
+
+.toggle{
+    position: absolute;
+    top: 80px;
+    left: 94%;
+    height: 20px;
+    width: 20px;
+    float: right;
+    cursor: pointer;
+    display: none;
+    
+}
+
+.toggle span, .toggle span:before, .toggle span:after{
+    content: "";
+    position: relative;
+    display: block;
+    background-color: black;
+    width: 100%;
+    height: 3px;
+}
+
+.toggle span:before{
+    top: 18px;
+}
+.toggle span:after{
+    top: 6px;
+}
+
+.top-menu-nav.
+
+@media only screen and (max-width: 1264px){
+
+    .top-menu-nav{
+        position: absolute;
+        top: 120px;
+        right: 0px;
+        width: 230px;
+        height: 1000px;
+        transform: translateX(0%);
+        margin: 0px; padding: 0px;
+        border-left: #DCDCDC 1px solid;
+
+    }
+
+    .toggle{
+        display: block;
+    }
+
+    #lang{
+        display: none;
+    }
+
+    #nav-moncompte{
+        border: transparent;
+        margin: 0px;padding:0px;
+    }
+
+    .top-menu li a{
+        padding: 0px;margin: auto;
+        width: 190px;
+        padding-bottom: 5px; 
+    }
+
+    .top-menu li{
+        display:block;
+        text-align: center;
+        padding: 0px;margin:0px 20px;
+        height: 55px;
+    }
+
+    .top-menu{
+        padding: 0px;
+    }
+
+
+
+}
