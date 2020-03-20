@@ -26,7 +26,8 @@
             </nav>
             <div class="toggle"><span></span></div>
         </div>
-      </header>
+    </header>
+    
 
 </body>
 </html>
