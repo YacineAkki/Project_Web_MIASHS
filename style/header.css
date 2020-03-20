@@ -27,6 +27,7 @@ header {
     font-family: "Lato";
     font-weight: bold;
     font-size: 18px;
+    transition: all 0.3s ease-in-out;
 }
 
 ul {
@@ -102,9 +103,11 @@ ul {
     top: 6px;
 }
 
-.top-menu-nav.
+.top-menu-nav.isopen{
+    transform: translateX(100%);
+}
 
-@media only screen and (max-width: 1264px){
+@media only screen and (max-width: 1300px){
 
     .top-menu-nav{
         position: absolute;
