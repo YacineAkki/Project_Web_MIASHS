@@ -23,7 +23,7 @@ header {
 .top-menu-nav {
     text-align: right;
     margin-right: 3%;
-    margin-top: 55px;
+    margin-top: 56px;
     font-family: "Lato";
     font-weight: bold;
     font-size: 18px;
@@ -82,7 +82,6 @@ ul {
     height: 20px;
     width: 20px;
     float: right;
-    cursor: pointer;
     display: none;
     
 }
@@ -104,7 +103,7 @@ ul {
 }
 
 .top-menu-nav.isopen{
-    transform: translateX(100%);
+    transform: translateX(0%);
 }
 
 @media only screen and (max-width: 1300px){
@@ -115,14 +114,16 @@ ul {
         right: 0px;
         width: 230px;
         height: 1000px;
-        transform: translateX(0%);
+        transform: translateX(100%);
         margin: 0px; padding: 0px;
         border-left: #DCDCDC 1px solid;
+        transition: all 0.3s ease-in-out;
 
     }
 
     .toggle{
         display: block;
+        cursor: pointer;
     }
 
     #lang{
