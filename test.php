@@ -2,57 +2,50 @@
 
 
 <html>
-<meta http-equiv="Content-Type"
-content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<head>
-	<title>Test</title>
-	<meta name="generator" content="BBEdit 13.0" />
-	<link rel="stylesheet" href="styles/test.css" type="text/css" media="screen"/>
-</head>
-<body>
+	<head>
+		<title>Test</title>
+		<meta name="generator" content="BBEdit 13.0" />
+		<link rel="stylesheet" href="styles/test.css" type="text/css" media="screen"/>
+	</head>
+	<body>
 
-<form action="enregistrement.php" method="get" autocomplete="off">
+		<form action="enregistrementTest.php" method="get" autocomplete="off">
+			<h1>Commencer le test</h1>
+				<p> Salut! Je suis le professeur Test. C'est moi qui vais m'occuper de votre Body Check... euhh 
+					c'est plus un Nutri Check, si vous voyer ce que je veux dire.</p>
+				<p>Pour pouvoir effectuer mes calculs j'ai besoins de vous connaitre vous et vos habitudes alimentaires.</p>
+				<br/> 
+			<h2> Commençons par vous : </h2>
 
-<p>
-Nom :
-<?php
+			<div>
+				Quel est votre date de naissance ? :
 
-echo '<input type="text" name="n" value ='. $_GET['var1']."/>";
+				<label for="datenais">Start date:</label>
 
+					<input type="date" id="datenais" name="datenais"
+       					value="2020-03-22"
+       				min="2020-01-01" max="2020-12-31">
 
-?>
+			</div>
 
+			<div class="input">
+				Quel taille faite-vous?
+            	  <label>Votre taille :</label>
+                 <input type="number" name="taille" value= "">
 
-</p>
+            </div>
 
-<p>
-Prénom :
-<?php
+			<div class="input">
+				Combien pesez vous? <emp> Ne vous inquitez pas, c'est entre nous</emp>
+            	  <label>Votre poids :</label>
+                 <input type="number" name="poids" value= "">
 
-echo '<input type="text" prenom="p" value ='. $_GET['var2']."/>";
-
-
-?>
-</p>
-
-<p>
-Adresse :
-<?php
-
-echo '<input type="text" name="adr" value ='. $_GET['var3']."/>";
-
-
-?>
-</p>
-
-<p>
-Adresse e-mail :
-<?php
-
-echo '<input type="text" name="mail" value ='. $_GET['var4']."/>";
+             </div>
+		</form>
 
 
-?></p>
+	</body>
 
-<p>
+</html>
