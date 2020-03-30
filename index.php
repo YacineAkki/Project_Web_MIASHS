@@ -29,6 +29,18 @@
             <div class="toggle"><span></span></div>
         </div>
     </header>
+
+    <footer>
+        <ul>
+            
+        </ul>
+        <ul>
+            
+        </ul>
+        <ul>
+            
+        </ul>
+    </footer>
     
 
 </body>
