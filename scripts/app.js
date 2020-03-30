@@ -1,4 +1,5 @@
-${"toggle"}.click(function(e){
+$(".toggle").click(function(e){
+	alert("salut");
 	e.preventDefault();
-	${"top-menu-nav"}.addClass("isopen");
-})
+	$(".top-menu-nav").toggleClass("isopen");
+});

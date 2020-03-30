@@ -7,6 +7,7 @@ html,body{
 header {
     width: 100%;
     position:fixed;
+    top: 0;
     border-bottom: #DCDCDC 1px solid;
 }
 
@@ -83,6 +84,7 @@ ul {
     width: 20px;
     float: right;
     display: none;
+    cursor: pointer;
     
 }
 
@@ -102,7 +104,7 @@ ul {
     top: 6px;
 }
 
-.top-menu-nav.isopen{
+.isopen{
     transform: translateX(0%);
 }
 
@@ -123,7 +125,6 @@ ul {
 
     .toggle{
         display: block;
-        cursor: pointer;
     }
 
     #lang{
