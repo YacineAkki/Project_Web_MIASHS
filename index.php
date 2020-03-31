@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Body Check</title>
-    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/model.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/jquery-3.4.1.min.js"></script>
     <script src="scripts/app.js" type="text/javascript"></script>
@@ -29,15 +29,17 @@
             <div class="toggle"><span></span></div>
         </div>
     </header>
-
+    <div id="container">
+        
+    </div>    
     <footer>
-        <ul>
+        <ul><h3>Université Paul Valéry</h3>
             
         </ul>
-        <ul>
+        <ul><h3>Qui sommes nous ?</h3>
             
         </ul>
-        <ul>
+        <ul><h3>A Propos</h3>
             
         </ul>
     </footer>

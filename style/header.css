@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,,700,900|Roboto:300,500,900&display=swap');
-/* HEADER */
+
 html,body{
     font-family: "Lato";
     margin: 0px; padding: 0px;
+    height: 100%;
 }
+
+/* HEADER */
 header {
     width: 100%;
     position:fixed;
@@ -107,6 +110,13 @@ ul {
 .top-menu-nav.isopen{
     transform: translateX(0%);
 }
+
+.toggle.isopen{
+    opacity: 0.5px;
+}
+
+/* FOOTER */
+
 
 @media only screen and (max-width: 1300px){
 
