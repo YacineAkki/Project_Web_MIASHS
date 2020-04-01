@@ -68,7 +68,18 @@
                     </form>
 
                     
-                </div>  
+                </div>
+                <footer>
+                    <ul><h3>Université Paul Valéry</h3>
+                        
+                    </ul>
+                    <ul><h3>Qui sommes nous ?</h3>
+                        
+                    </ul>
+                    <ul><h3>A Propos</h3>
+                        
+                    </ul>
+                </footer>  
 
             </body>
         </html>
