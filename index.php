@@ -30,7 +30,7 @@
         </div>
     </header>
     <div id="container">
-        
+        JE SUIS LE CONTENU DU SITE BLABLABLAAAA
     </div>    
     <footer>
         <ul><h3>Université Paul Valéry</h3>
