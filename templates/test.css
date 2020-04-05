@@ -1,0 +1,44 @@
+body{
+    margin: 30px;
+    padding: 40px;
+}
+
+h1{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color:  #F29F05;
+}
+
+h3{
+    color: #60AD42;
+    
+    
+}
+
+.etape1{
+    display: none;
+}
+
+.etape2{
+    text-align: center;
+    margin: 20px;
+    margin-top: 5px;
+    display: none;
+
+}
+
+#parfait{
+    clear: left;
+}
+
+#submit{
+    text-align: center;
+    color: #60AD42;
+    font-size: 80%;
+}
+
+button{
+    color: #60AD42;
+    font-size: 80%;
+}
