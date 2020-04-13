@@ -29,19 +29,18 @@
             <div class="toggle"><span></span></div>
         </div>
     </header>
-    <div id="container">
-        JE SUIS LE CONTENU DU SITE BLABLABLAAAA
-    </div>    
+
+    <section>
+        <p> Bonjour, notre site a pour but de vous aider à améliorer votre santé. </p> <br>
+        <p> En effet, pour y parvenir, vous pouvez calculer votre indice pondéral et nous vous indiquerons si vous devez perdre, gagner ou maintenir votre poids. </p> <br>
+        <p> A la suite de cette indication, nous calculerons la quantité de calories nécessaire à votre organisme pour tenir toute une journée. Suite à cela, nous vous proposerons la quantité de calories à consommer chaque jour pour améliorer votre santé. </p> <br>
+        <p> Vous pourrez ensuite consulter nos différents plats afin de composer des repas équilibrés adaptés a votre régime. </p>
+    </section> 
+
     <footer>
-        <ul><h3>Université Paul Valéry</h3>
-            
-        </ul>
-        <ul><h3>Qui sommes nous ?</h3>
-            
-        </ul>
-        <ul><h3>A Propos</h3>
-            
-        </ul>
+        <ul> <h3>Université Paul Valéry</h3> </ul>
+        <ul> <h3>Qui sommes nous ?</h3> </ul>
+        <ul> <h3>A Propos</h3> </ul>
     </footer>
     
 
