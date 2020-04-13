@@ -38,9 +38,15 @@
     </section> 
 
     <footer>
-        <ul> <h3>Université Paul Valéry</h3> </ul>
-        <ul> <h3>Qui sommes nous ?</h3> </ul>
-        <ul> <h3>A Propos</h3> </ul>
+        <ul class="listfooter"> <h3>Université Paul Valéry</h3> 
+
+        </ul>
+        <ul class="listfooter"> <h3>Qui sommes nous ?</h3>
+             <li>Etudiant en 3ème année de Licence MIASHS</li>
+        </ul>
+        <ul class="listfooter"> <h3>A Propos</h3> 
+
+        </ul>
     </footer>
     
 

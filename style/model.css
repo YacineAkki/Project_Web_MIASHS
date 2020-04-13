@@ -9,9 +9,18 @@ html,body{
 /* HEADER */
 header {
     width: 100%;
-    position:fixed;
     top: 0;
     border-bottom: #DCDCDC 1px solid;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+}
+
+.classfooter{
+    padding: 0px;
 }
 
 .logo-container {
