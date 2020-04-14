@@ -8,9 +8,10 @@ html,body{
 
 /* HEADER */
 header {
-    width: 100%;
-    top: 0;
     border-bottom: #DCDCDC 1px solid;
+}
+section{
+    padding: 15px;
 }
 
 footer{
@@ -19,6 +20,7 @@ footer{
     background-color: black;
     color: white;
     font-family: "Lato";
+    height: 300px;
 }
 
 #listfooterright{
@@ -161,9 +163,13 @@ ul {
         margin: 0px; padding: 0px;
         border-left: #DCDCDC 1px solid;
         transition: all 0.3s ease-in-out;
+        background-color: #f9dcd2;
 
     }
 
+    section{
+        margin-top: 150px;
+    }
     .toggle{
         display: block;
     }
