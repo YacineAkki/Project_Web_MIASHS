@@ -41,7 +41,7 @@
                 </section>
 
                 
-                 <footer>
+                <footer>
                     <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
                          <li>Adresse : Route de Mende, 34090 Montpellier</li>
                          <li>Téléphone : 04 67 14 20 00</li>
