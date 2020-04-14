@@ -17,10 +17,29 @@ footer{
     display: flex;
     justify-content: space-around;
     background-color: black;
+    color: white;
+    font-family: "Lato";
 }
 
+#listfooterright{
+    margin-right: 140px;
+}
 .classfooter{
     padding: 0px;
+}
+
+.liens{
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.lienfooter{
+    margin-top: 20px;
+}
+
+.liens:hover{
+    color: #5fad4d;
 }
 
 .logo-container {

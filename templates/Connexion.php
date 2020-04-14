@@ -66,13 +66,30 @@
                     </form>
 
                     
-                </div>
-    <footer>
-        <ul> <h3>Université Paul Valéry</h3> </ul>
-        <ul> <h3>Qui sommes nous ?</h3> </ul>
-        <ul> <h3>A Propos</h3> </ul>
-    </footer>
+        </div>
 
-            </body>
-        </html>
+        <footer>
+            <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
+                 <li>Adresse : Route de Mende, 34090 Montpellier</li>
+                 <li>Téléphone : 04 67 14 20 00</li>
+                 <li>Type : Université en France</li>
+                 <li>Président : Patrick Gilli</li>
+                 <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/universit%C3%A9" class="liens">A propos</a></li>
+
+            </ul>
+            <ul> <h3>Qui sommes nous ?</h3>
+                 <li>Etudiants en 3ème année de Licence</li>
+                 <li>Etudiants en 3ème année de Licence</li>
+                 <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/formations/offre-de-formation/licence-lmd-XA/sciences-humaines-et-sociales-SHS/licence-mathematiques-et-informatique-appliquees-aux-sciences-humaines-et-sociales-miashs-program-licence-miashs.html" class="liens">Licence MIASHS (Maths info appliquée aux SHS)</a></li>
+                 <li><a href="templates/contact.php" class="liens">Contact</a></li>
+            </ul>
+            <ul id="listfooterright"> <h3>A Propos</h3> 
+                 <li class="lienfooter"><a href="templates/apropos.php" class="liens">A savoir</a></li>
+            </ul>
+        </footer>
+  
+
+    </body>
+
+</html>
 
