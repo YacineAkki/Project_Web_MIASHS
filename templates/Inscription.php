@@ -103,13 +103,17 @@
 
                 </ul>
                 <ul> <h3>Qui sommes nous ?</h3>
-                     <li>Etudiants en 3ème année de Licence</li>
-                     <li>Etudiants en 3ème année de Licence</li>
+                     <li>Etudiants en 3ème année de Licence MIASHS</li>
+                     <li>Domaine Data Science</li>
                      <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/formations/offre-de-formation/licence-lmd-XA/sciences-humaines-et-sociales-SHS/licence-mathematiques-et-informatique-appliquees-aux-sciences-humaines-et-sociales-miashs-program-licence-miashs.html" class="liens">Licence MIASHS (Maths info appliquée aux SHS)</a></li>
                      <li><a href="templates/contact.php" class="liens">Contact</a></li>
                 </ul>
-                <ul id="listfooterright"> <h3>A Propos</h3> 
-                     <li class="lienfooter"><a href="templates/apropos.php" class="liens">A savoir</a></li>
+                <ul id="listfooterright"> <h3>Développeurs</h3> 
+                    <li>Monika</li>
+                    <li>Yacine</li>
+                    <li>Johanna</li>
+                    <li>Justin</li>
+                    <li>Berk</li>
                 </ul>
             </footer>
         </body>
