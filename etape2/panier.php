@@ -1,16 +1,7 @@
-<?php
-include("foncPanier.php");
-creationPanier();
-include("bdConnect.php");
-?>
 
 <html>
 	<head>
-		<title>plat du jour </title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href=
-"etape3.css" type="text/css"
-media="screen" />
+		<title>tous-les-plats </title>
 
 <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 	           
@@ -44,76 +35,153 @@ media="screen" />
                 <div class="toggle"><span></span></div>
             </div>
         </header>
-	
-	
-	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	
-	<form method="POST" action="">
-			<label> Entrez votre plat : </label> </br>
-			<input  type="search" name="plat" placeholder="Recherchez un plat.." id="search" value="" />
-	
-	<div id="resultat">
-	</br>
-		<ul>
-		
-		</ul>
-		</div>
-		
-		<div id="loader">
-		<img src="load.gif">
-		</div>
-		
-		<div id="feedback">
-		</div>
 
+
+
+
+
+
+<?php
+
+include("foncPanier.php");
+include("bdConnect.php");
+$erreur=false;
+
+$action=(isset($_POST['action'])?$_POST['action']:(isset($_GET['action'])?$_GET['action']:null));
+
+if($action!==null){
+	if(!in_array($action,array("ajout","suppression","refresh")))
+	
+	$erreur= true;
+	
+	$l=(isset($_POST['l'])?$_POST['l']:(isset($_GET['l'])?$_GET['l']:null));
+	$q=(isset($_POST['q'])?$_POST['q']:(isset($_GET['q'])?$_GET['q']:null));
+	$p=(isset($_POST['p'])?$_POST['p']:(isset($_GET['p'])?$_GET['p']:null));
+	
+	
+	$l= preg_replace('#\v#','',$l);
+	
+	$p=floatval($p);
+	
+	if(is_array($q)){
+		
+		$quantPlat = array();
+		
+		$i=0;
+		
+		foreach($q as $contenu){
 			
-			<input type="submit" value ="ok" />
-		</form>
+			$quantPlat[$i++]= intval($contenu);
+		}
 		
+	}else{
 		
-		
-		
-		<script src="jquery-3.4.1.js"></script>
-		<script src="etape3.js"></script>
-		
+		$q=intval($q);
 	
-	
-		
-	<?php
-	$bdd = getBd();
-	
-	if(isset($_POST['plat'])&& !empty($_POST['plat'])){
-		$plat = htmlspecialchars($_POST['plat']);
-		$requete = $bdd->query('SELECT * FROM platboisson WHERE nomPlat LIKE "%'.$plat.'%" ORDER BY idP ');
-	while ($resultat = $requete->fetch()){
-	echo  $resultat['nomPlat']. "<br/>";
+
 	}
-	
+}
+
+if(!$erreur){
+	switch($action){
+		case "ajout";
+		
+		ajouterPlat($l,$q,$p);
+		
+		break;
+		
+		case"suppression";
+		
+		supprimerPlat($l);
+		
+		break;
+		
+		case"refresh";
+		
+		for($i=0; $i<count($quantPlat);$i++){
+			
+			modifierQuantPlat($_SESSION['panier']['nomPlat'][$i],round($quantPlat[$i]));
+		}
+		
+		break;
+		
+		Default;
+		
+		break;
+		
 	}
+}
+
+?>
+
+<form method="post" action="">
+<table width="400">
+<tr>
+<td> Vos plats aujourd'hui:</td>
+</tr>
+<tr>
+<td>plats</td>
+<td>calorie</td>
+<td>quantité</td>
+<td>action</td>
+</tr>
+
+<?php
+
+if(isset($_GET['deletepanier'])&& $_GET['deletepanier']==true){
 	
+	supprimerPanier();
+}
+
+if(creationPanier()){
 	
+
+$nbplats= count($_SESSION['panier']['nomPlat']);
+
+if($nbplats <= 0){
+	echo "Oups,Vous n'avez pas selectionné de plat. Vous n'avez rien mangé aujourd'hui? ";
+}else{
 	
+	for($i=0;$i<$nbplats;$i++){
+		?>
+		
+		<tr>
+		<td><br/><?php echo $_SESSION['panier']['nomPlat'][$i];?></td>
+		
+		<td><br/><?php echo $_SESSION['panier']['calPlat'][$i];?></td>
+		<td><br/><input name="q[]"  value="<?php echo $_SESSION['panier']['quantPlat'][$i];?> "></td>
+		<td><br/><a href = "panier.php?action=supression&amp;l=<?php echo rawurlencode($_SESSION['panier']['nomPlat'][$i]);?>">Supprimer le plat<a/></td>
+		</tr>
+		<?php       
+	}?>
+		<tr>
+		<td>
+		<p> total calorie :<?php echo calPanier();?></p>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<input type ="submit" value="rafraichir"/>
+		<input type="hidden" name="action" value="refresh"/>
+		<a href="?deletepanier=true">supprimer le panier</a>
+		<a href="etape3.php">ajouter d'autres plats </a>
+		</td>
+		</tr>
+		<?php
 	
-	 
+}
 	
-	
-	
-	
-	
-	
-	?>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<footer>
+}
+
+
+
+?>
+</table>
+</form>
+
+
+<footer>
             <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
                  <li>Adresse : Route de Mende, 34090 Montpellier</li>
                  <li>Téléphone : 04 67 14 20 00</li>

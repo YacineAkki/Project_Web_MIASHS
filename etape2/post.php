@@ -1,5 +1,6 @@
 <?php
-$bdd =new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
+include("bdConnect.php");
+$bdd =getBd();
 	
 	if(isset($_POST['search'])&& !empty($_POST['search'])){
 		$plat = htmlspecialchars($_POST['search']);
