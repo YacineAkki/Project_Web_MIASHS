@@ -19,7 +19,7 @@
 
                 <header>
                     <div class="logo-container">
-                        <a href="index.php"><img src="ressources/logo.png" alt="description" id="logo"></a>
+                        <a href="../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
                     </div>
                     <div class="container-menu-nav">
                         <nav class="top-menu-nav">

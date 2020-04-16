@@ -6,16 +6,18 @@
 
 	<head>
 		<title>Test</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="test.js"></script>
 		<link rel="stylesheet" href="styles/test.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="../style/model.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		
+		<script src="../scripts/jquery-3.4.1.min.js"></script>
+        <script src="../scripts/app.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<header>
 	        <div class="logo-container">
-	            <a href="index.php"><img src="ressources/logo.png" alt="description" id="logo"></a>
+	            <a href="../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
 	        </div>
 	        <div class="container-menu-nav">
 	            <nav class="top-menu-nav">

@@ -3,12 +3,12 @@
 html,body{
     font-family: "Lato";
     margin: 0px; padding: 0px;
-    height: 100%;
+    background-color: #f9dcd2;
 }
 
 /* HEADER */
 header {
-    border-bottom: #DCDCDC 1px solid;
+    border-bottom: #DCDCDC 2px solid;
 }
 section{
     padding: 15px;
@@ -45,7 +45,7 @@ footer{
 }
 
 .logo-container {
-    margin: 10px 10px 10px 60px;
+    margin: -50px 10px 10px 60px;
     float: left;
 }
 
@@ -103,8 +103,8 @@ ul {
 }
 
 #nav-moncompte{
-    border-left: #DCDCDC 1px solid;
-    border-right: #DCDCDC 1px solid;
+    border-left: #DCDCDC 3px solid;
+    border-right: #DCDCDC 3px solid;
     padding-left: 35px;
     margin-right: 10px;
 }

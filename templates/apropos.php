@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
     <title>Body Check</title>
     <link rel="stylesheet" href="../style/model.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +14,7 @@
 
     <header>
         <div class="logo-container">
-            <a href="index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
+            <a href="../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
         </div>
         <div class="container-menu-nav">
             <nav class="top-menu-nav">
