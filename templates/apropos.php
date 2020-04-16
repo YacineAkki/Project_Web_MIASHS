@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
     <title>Body Check</title>
     <link rel="stylesheet" href="../style/model.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +14,7 @@
 
     <header>
         <div class="logo-container">
-            <a href="index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
+            <a href="../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
         </div>
         <div class="container-menu-nav">
             <nav class="top-menu-nav">
@@ -109,9 +109,27 @@
 
 
     <footer>
-        <ul> <h3>Université Paul Valéry</h3> </ul>
-        <ul> <h3>Qui sommes nous ?</h3> </ul>
-        <ul> <h3>A Propos</h3> </ul>
+        <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
+             <li>Adresse : Route de Mende, 34090 Montpellier</li>
+             <li>Téléphone : 04 67 14 20 00</li>
+             <li>Type : Université en France</li>
+             <li>Président : Patrick Gilli</li>
+             <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/universit%C3%A9" class="liens">A propos</a></li>
+
+        </ul>
+        <ul> <h3>Qui sommes nous ?</h3>
+             <li>Etudiants en 3ème année de Licence MIASHS</li>
+             <li>Domaine Data Science</li>
+             <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/formations/offre-de-formation/licence-lmd-XA/sciences-humaines-et-sociales-SHS/licence-mathematiques-et-informatique-appliquees-aux-sciences-humaines-et-sociales-miashs-program-licence-miashs.html" class="liens">Licence MIASHS (Maths info appliquée aux SHS)</a></li>
+             <li><a href="templates/contact.php" class="liens">Contact</a></li>
+        </ul>
+        <ul id="listfooterright"> <h3>Développeurs</h3> 
+            <li>Monika</li>
+            <li>Yacine</li>
+            <li>Johanna</li>
+            <li>Justin</li>
+            <li>Berk</li>
+        </ul>
     </footer>
     
 

@@ -18,7 +18,7 @@ session_start();
          <?php
 
 
-                $conn =  new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
+                $conn = new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
                 if ($conn->connect_error){
                     die("Connection failed: " . $conn->connect_error);
                 }

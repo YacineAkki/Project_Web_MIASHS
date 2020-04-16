@@ -3,19 +3,49 @@
 html,body{
     font-family: "Lato";
     margin: 0px; padding: 0px;
-    height: 100%;
+    background-color: #f9dcd2;
 }
 
 /* HEADER */
 header {
-    width: 100%;
-    position:fixed;
-    top: 0;
-    border-bottom: #DCDCDC 1px solid;
+    border-bottom: #DCDCDC 2px solid;
+}
+section{
+    padding: 15px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    font-family: "Lato";
+    height: 300px;
+}
+
+#listfooterright{
+    margin-right: 140px;
+}
+.classfooter{
+    padding: 0px;
+}
+
+.liens{
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.lienfooter{
+    margin-top: 20px;
+}
+
+.liens:hover{
+    color: #5fad4d;
 }
 
 .logo-container {
-    margin: 10px 10px 10px 60px;
+    margin: -50px 10px 10px 60px;
     float: left;
 }
 
@@ -73,8 +103,8 @@ ul {
 }
 
 #nav-moncompte{
-    border-left: #DCDCDC 1px solid;
-    border-right: #DCDCDC 1px solid;
+    border-left: #DCDCDC 3px solid;
+    border-right: #DCDCDC 3px solid;
     padding-left: 35px;
     margin-right: 10px;
 }
@@ -133,9 +163,13 @@ ul {
         margin: 0px; padding: 0px;
         border-left: #DCDCDC 1px solid;
         transition: all 0.3s ease-in-out;
+        background-color: #f9dcd2;
 
     }
 
+    section{
+        margin-top: 150px;
+    }
     .toggle{
         display: block;
     }
@@ -168,4 +202,59 @@ ul {
 
 
 
+}
+.petit{
+	width: 10px;
+	
+}
+
+#malist{
+	padding:0px;
+	margin:0px;
+	width:200px;
+	height:45px;
+	list-style:none;
+}
+
+
+#resultat ul {
+
+	
+margin:0px;
+padding:0px;
+position:relative;
+bottom:18px;
+width:200px;
+display:none;
+text-align:center;
+border:1px solid #000;
+text-decoration:none;
+}
+
+
+
+#search{
+	border:2px solid #000;
+	text-align:center;
+	width:200px;
+}
+
+
+
+#loader{
+	margin-left:90px;
+	display:none;
+}
+
+table{
+	margin-left:23%;
+	margin-right:23%;
+	text-align:center-left;
+	
+	
+}
+
+.lienTest{
+	margin-top:0%;
+	background-color:#F5B6B5;
 }
