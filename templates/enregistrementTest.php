@@ -7,7 +7,7 @@
 		<title>enregistrement test</title>
 		<?php		
 			
-			
+		include("platsJournée/bdConnect.php");	
 			
 				function enregistrerUser($dateNais, $taille, $poids){
 				
@@ -65,6 +65,33 @@
 				
 		
 		        echo'<META http-equiv="refresh" content="0; URL=p2.php">';
+				
+				
+				
+				
+				
+				function enregistrer ($nomsport,$nbsport){
+	$bdd=getBD();
+	$req = "INSERT INTO sport(nomSport,DuréeSport) VALUES ('$nomsport','$nbsport')";
+	$reponse=$bdd->query($req);	
+
+
+}
+
+
+if($_GET['nomsport']!="" and $_GET['nbsport']!="" ) {
+	
+	
+	enregistrer($_GET['nomsport'],$_GET['nbsport']);
+	
+	echo "<meta http-equiv='refresh' content='2; URL =test.php'>";
+
+}
+
+else {
+echo "<meta http-equiv='refresh' content='2; URL =test.php'>";
+}
+
 			 
 		
 			?>

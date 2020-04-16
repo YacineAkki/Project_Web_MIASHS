@@ -203,3 +203,58 @@ ul {
 
 
 }
+.petit{
+	width: 10px;
+	
+}
+
+#malist{
+	padding:0px;
+	margin:0px;
+	width:200px;
+	height:45px;
+	list-style:none;
+}
+
+
+#resultat ul {
+
+	
+margin:0px;
+padding:0px;
+position:relative;
+bottom:18px;
+width:200px;
+display:none;
+text-align:center;
+border:1px solid #000;
+text-decoration:none;
+}
+
+
+
+#search{
+	border:2px solid #000;
+	text-align:center;
+	width:200px;
+}
+
+
+
+#loader{
+	margin-left:90px;
+	display:none;
+}
+
+table{
+	margin-left:23%;
+	margin-right:23%;
+	text-align:center-left;
+	
+	
+}
+
+.lienTest{
+	margin-top:0%;
+	background-color:#F5B6B5;
+}
