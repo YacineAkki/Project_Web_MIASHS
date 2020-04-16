@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/jquery-3.4.1.min.js"></script>
     <script src="scripts/app.js" type="text/javascript"></script>
+	<script src="scripts/fonction.js" type="text/javascript"></script>
+	
 </head>
 
 <body>
@@ -19,6 +21,7 @@
             <nav class="top-menu-nav">
                 <ul class="top-menu">
                     <li><a href="index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
+					<li><a href="templates/platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
                     <li><a href="templates/test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
                     <li><a href="templates/apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
                     <li><a href="templates/contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
@@ -31,11 +34,35 @@
     </header>
 
     <section>
-        <p> Bonjour, notre site a pour but de vous aider à améliorer votre santé. </p> <br>
-        <p> En effet, pour y parvenir, vous pouvez calculer votre indice pondéral et nous vous indiquerons si vous devez perdre, gagner ou maintenir votre poids. </p> <br>
+        <h1> Bonjour, notre site a pour but de vous aider à améliorer votre santé. </h1> <br>
+		<table >
+		<tr>
+ <td>
+ <a href="templates/journéePlats/etape3.php" ><img  id="grand" onmouseover="overParagraphe('grand')" onmouseout= "outParagraphe('grand')" src="ressources/cal.png" width="300"></a></td>
+ <td>____</td>
+ <td><a href="templates/test.php" ><img  id="2" onmouseover="overParagraphe('2')" onmouseout= "outParagraphe('2')" src="ressources/test.jpg" width="300" ></a></td>
+ </tr>
+ 
+ <tr>
+ <td><p><h1 class="lienTest"><a href="templates/journéePlats/etape3.php" class="liens">Calculer les calories </a></h1></br></p>
+<p> Vous pouvez ici selectionner les plats que vous avez mangé à une date donnée. </p></br>
+ <p>Ainsi vous pourrez voir les calories de chacuns des plats.Et un calcul du nombre de calorie que vous avez consommé durant cette journée sera effectué.</p>
+ 
+<p>Toutes les journées que vous enregistrerez seront stocké dans une base de donnée.</br></p>
+<p>vous pourrez donc avoir un suivi des calories que vous avez consommé au fil des jours.</p> 
+ </td>
+ 
+ <td></td>
+ 
+ <td>
+        <p> <h1 class="lienTest"><a href="templates/test.php" class="liens"> Faire le test</a> </h1> </br> En effet, pour y parvenir, vous pouvez calculer votre indice pondéral et nous vous indiquerons si vous devez perdre, gagner ou maintenir votre poids. </p> <br>
         <p> A la suite de cette indication, nous calculerons la quantité de calories nécessaire à votre organisme pour tenir toute une journée. Suite à cela, nous vous proposerons la quantité de calories à consommer chaque jour pour améliorer votre santé. </p> <br>
         <p> Vous pourrez ensuite consulter nos différents plats afin de composer des repas équilibrés adaptés a votre régime. </p>
-    </section> 
+   </td>
+   </tr>
+   
+   </table>
+   </section> 
 
     <footer>
         <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
@@ -53,7 +80,7 @@
              <li><a href="templates/contact.php" class="liens">Contact</a></li>
         </ul>
         <ul id="listfooterright"> <h3>Développeurs</h3> 
-             <li>Monika</li>
+             <li>Moulika</li>
              <li>Yacine</li>
              <li>Johanna</li>
              <li>Justin</li>

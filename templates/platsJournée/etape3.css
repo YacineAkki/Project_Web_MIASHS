@@ -1,4 +1,14 @@
-#resultat ul{
+#malist{
+	padding:0px;
+	margin:0px;
+	width:200px;
+	height:45px;
+	list-style:none;
+}
+
+
+#resultat ul {
+
 	
 margin:0px;
 padding:0px;
@@ -20,24 +30,8 @@ text-decoration:none;
 }
 
 
-a{
-	color:#000;
-}
 
-li{
-	padding:0px;
-	margin:0px;
-	width:200px;
-	height:45px;
-	list-style:none;
-
-	
-	
-	
-}
 #loader{
 	margin-left:90px;
 	display:none;
 }
-
-

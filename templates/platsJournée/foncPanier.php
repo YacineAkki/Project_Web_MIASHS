@@ -8,7 +8,7 @@ function creationPanier(){
 		$_SESSION['panier']['calPlat']=array();
 		$_SESSION['panier']['quantPlat']=array();
 		
-		
+		echo "crée";
 		
 	}
 	return true;
@@ -26,7 +26,7 @@ function ajouterPlat($nomPlat,$quantPlat,$calPlat){
 		
 		if($position_plat !==false){
 			
-			$_SESSION['panier']['nomPlat'][$position_plat]+=$quantPlat;
+			$_SESSION['panier']['quantPlat'][$position_plat]+=$quantPlat;
 		
 		}else{
 			
@@ -53,10 +53,10 @@ function modifierQuantPlat($nomPlat,$quantPlat){
 		
 		if($quantPlat>0){
 			
-			$position_produit= array_search($_SESSION['panier']['nomPlat'],$nomPlat);
+			$position_produit= array_search($nomPlat,$_SESSION['panier']['nomPlat']);
 			
 			if($position_produit!== false){
-				$_SESSION['panier']['nomPlat'][$position_produit]=$quantPlat;
+				$_SESSION['panier']['quantPlat'][$position_produit]=$quantPlat;
 			}
 			
 		}else{
@@ -90,9 +90,9 @@ function supprimerPlat($nomPlat){
 			
 			if($_SESSION['panier']['nomPlat'][$i]!== $nomPlat){
 				
-			array_push($_SESSION['panier']['nomPlat'],$_SESSION['panier']['nomPlat'][$i]);
-			array_push($_SESSION['panier']['quantPlat'],$_SESSION['panier']['quantPlat'][$i]);
-			array_push($_SESSION['panier']['calPlat'],$_SESSION['panier']['calPlat'][$i]);
+			array_push($tmp['nomPlat'],$_SESSION['panier']['nomPlat'][$i]);
+			array_push($tmp['quantPlat'],$_SESSION['panier']['quantPlat'][$i]);
+			array_push($tmp['calPlat'],$_SESSION['panier']['calPlat'][$i]);
 				
 		}
 		}
@@ -100,7 +100,8 @@ function supprimerPlat($nomPlat){
 		$_SESSION['panier']=$tmp;
 		unset($tmp);
 		
-	}else{
+	}
+else{
 		
 		echo 'erreur3';
 	}
@@ -129,6 +130,16 @@ function supprimerPlat($nomPlat){
 			unset($_SESSION['panier']);
 		
 		
+	}
+	
+	function suprr($nomPlat){
+		
+		for($i=0; $i<count($_SESSION['panier']['nomPlat']);$i++){
+			if($_SESSION['panier']['nomPlat'][$i]==$nomPlat){
+				unset($_SESSION['panier'][$i]);
+			}
+			
+		}
 	}
 	
 	

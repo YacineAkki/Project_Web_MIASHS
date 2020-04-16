@@ -6,7 +6,7 @@ $bdd =getBd();
 		$plat = htmlspecialchars($_POST['search']);
 		$requete = $bdd->query('SELECT * FROM platboisson WHERE nomPlat LIKE "%'.$plat.'%" ORDER BY idP ');
 	while ($resultat = $requete->fetch()){
-	echo "<li><a href='#'>".$resultat['nomPlat']."</a></li><br/>";
+	echo "<li id='malist'><a href='#'>".$resultat['nomPlat']."</a></li><br/>";
 	}
 	
 	}
