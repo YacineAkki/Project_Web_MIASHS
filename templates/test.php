@@ -67,14 +67,14 @@
 			<div class="etape1" id="div2">
 				<h3>Quel taille faite-vous? <br/>	</h3>
             	  <label>Votre taille (en cm) :</label>
-                 <input type="number"  name="taille" value= "" required>
+                 <input type="number"  name="taille" value= "160" required>
 
             </div>
 
 			<div class="etape1" id="div3">
 			<h3>Combien pesez vous? <strong> Ne vous inquitez pas, c'est entre nous</strong></h3><br/>	
             	  <label>Votre poids (en kilo):</label>
-                 <input type="number" step="0.01" name="poids" value= "" required>
+                 <input type="number" step="0.01" name="poids" value= " 55" required>
 
 			</div>
 			
@@ -99,7 +99,7 @@
 			<div class="etape2" id="div4">
 				Que prenez- vous les matins?<br/>	
             	  <label> repas :</label>
-                 <input type="text" name="matin" value= "" required>
+                 <input type="text" name="matin" value= "kj" required>
 
 			</div>
 			
@@ -108,7 +108,7 @@
 			<div class="etape2" id="div5">
 				Que prenez- vous à midi?<br/>	
             	  <label> repas :</label>
-                 <input type="text" name="matin" value= "" required>
+                 <input type="text" name="matin" value= "ijk" required>
 
             </div>
 
@@ -118,7 +118,7 @@
 				Snack time
 				<br/>	
             	  <label> repas :</label>
-                 <input type="text" name="matin" value= "" required>
+                 <input type="text" name="matin" value= "lj" required>
 				
 
 			</div>
@@ -128,7 +128,7 @@
 			<div class="etape2" id="div7">
 				Que prenez- vous à le soir?<br/>	
             	  <label> repas :</label>
-                 <input type="text" name="matin" value= "" required>
+                 <input type="text" name="matin" value= " gh" required>
 
             </div>
 
@@ -148,7 +148,7 @@
 			<div class="input" id="div8">
 				Êtes-vous un fumeur?  <br/>	
             	  <label>fumeur:</label>
-                 <input type="boolean" name="fumer" value= "" required>
+                 <input type="boolean" name="fumer" value= " non" required>
 
 				<?php 
 
@@ -166,7 +166,7 @@
 			<div class="input" id="div9">
 				Pratiquez vous un sport?  <br/>	
             	  <label>Sport:</label>
-                 <input type="boolean" name="sport" value= "">
+                 <input type="boolean" name="sport" value= " non">
 
 				<?php 
 					$sport = $_POST['sport'];

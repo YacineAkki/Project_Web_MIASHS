@@ -42,10 +42,12 @@ session_start();
                 $resultat = $statement->fetch();
                 if ($resultat['id'] != "") {
                     $_SESSION['client']= array($resultat['id'],$resultat['nom'],$resultat['prenom'],$resultat['mail'],$resultat['motdepasse']);
-
-                    echo'<META http-equiv="refresh" content="0; URL=../index.php">';	
+                    echo "je suis ici";
+                    echo'<META http-equiv="refresh" content="10; URL=connexion.php">';	
                 } else{
-                    echo'<META http-equiv="refresh" content="0; URL=connexion.php">';
+                    echo "Bonjour Client!";
+                    
+                    echo'<META http-equiv="refresh" content="10; URL=../index.php">';
                 }
     
                 $resultat->closeCursor();   
