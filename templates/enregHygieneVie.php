@@ -6,33 +6,60 @@
 	    <!-- <link rel="stylesheet" href="../style/connexionRelated.css" type="text/css" media="screen"/>   -->
         <title>enregistrement de l'hygiéne de Vie</title>
         
+        <?php
+			
 
-            <?php
+			
 
-                function enregistrer ($nomsport,$nbsport){
-                            $bdd=getBD();
-                            $req = "INSERT INTO sport(nomSport,DuréeSport) VALUES ('$nomsport','$nbsport')";
-                            $reponse=$bdd->query($req);	
+			
+
+				
+			
+				function enregistrerSport($nomSport, $intensite){
+				
+                    
+                    
+				
+						$nomSport= $_GET['nomsport'];
+						echo "Nom sport = ".$nomSport. "<br/>";
+
+						
+
+				        $intensite=  $_GET['nbsport'];
+						echo "Intensité = ".$intensite. "<br/>";
+
+						
+	  		
+		            //connexion a la base de donnees
+	                $conn =  new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
+	                if ($conn->connect_error){
+	                    die("Connection failed: " . $conn->connect_error);
+	                }
+	                else{
+	                    echo "Connected successfully <br/>";
+	                 
+	                }
 
 
-                        }
+			        //Our SQL statement, which will select a list of tables from the current MySQL database.
+			            $sql = "INSERT INTO Sport (niveauIntensite, nomSport) VALUES('$intensite', '$nomSport')";
+                        echo($sql);
+	 
 
+			        //Prepare our SQL statement,
+			            $statement = $conn->prepare($sql);
 
-                        if($_GET['nomsport']!="" and $_GET['nbsport']!="" ) {
-                            
-                            
-                            enregistrer($_GET['nomsport'],$_GET['nbsport']);
-                            
-                            echo "<meta http-equiv='refresh' content='2; URL =resultat.php'>";
-
-                        }
-
-                        else {
-                        echo "<meta http-equiv='refresh' content='2; URL =hygieneVie.php'>";
-                        }
-
-		    
-		       
+	                //execute the statement
+                        $statement->execute();
+                    
+                       
+			
+	            }
+				
+		        enregistrerSport($_GET['nbsport'],  $_GET['nomsport']);
+				
+		
+		        echo'<META http-equiv="refresh" content="5; URL=resultat.php">';
 			 
 		
 			?>
