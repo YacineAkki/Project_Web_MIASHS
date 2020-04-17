@@ -57,7 +57,7 @@
 
 					<h3>Choix du sexe </h3>
 
-					Tapez 1 dans le champ qui correspond à votre sexe. <br/>
+					
 					<br/>
 						<label>Sexe</label>
 							<select name="Sexe" >
