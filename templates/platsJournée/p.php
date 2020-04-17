@@ -74,7 +74,7 @@ if($d!="" and $c!=""  ) {
 	echo "Le &nbsp; &nbsp;", $d ," &nbsp; &nbsp; vous avez mangé  &nbsp; &nbsp;  ", $c ,"&nbsp; &nbsp; calorie.";
 	
 	echo "</br>info inseré </br> ";
-	session_destroy();
+	unset($_SESSION['panier']);
 	?><a href="etape3.php">ajouter des plats à une autre journée  </a>
 	<?php
 

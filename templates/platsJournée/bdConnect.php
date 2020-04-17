@@ -1,6 +1,6 @@
 <?php
 function getBD(){
-	$bdd= new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
+	$bdd= new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
 return $bdd;
 }
 ?>

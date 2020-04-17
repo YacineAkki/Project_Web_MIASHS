@@ -22,7 +22,7 @@ if(!isset($_SESSION)){
 	<body>
 	
 	
-	<header>
+		<header>
             <div class="logo-container">
                 <a href="../../index.php"><img src="../../ressources/logo.png" alt="description" id="logo"></a>
             </div>
@@ -30,6 +30,7 @@ if(!isset($_SESSION)){
                     <nav class="top-menu-nav">
                         <ul class="top-menu">
                             <li><a href="../../index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
+							<li><a href="etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
                             <li><a href="../test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
                             <li><a href="../apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
                             <li><a href="../contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
@@ -63,6 +64,9 @@ if($action!==null){
 	$q=(isset($_POST['q'])?$_POST['q']:(isset($_GET['q'])?$_GET['q']:null));
 	$p=(isset($_POST['p'])?$_POST['p']:(isset($_GET['p'])?$_GET['p']:null));
 	$id=(isset($_POST['id'])?$_POST['id']:(isset($_GET['id'])?$_GET['id']:null));
+	$li=(isset($_POST['li'])?$_POST['li']:(isset($_GET['li'])?$_GET['li']:null));
+	$glu=(isset($_POST['glu'])?$_POST['glu']:(isset($_GET['glu'])?$_GET['glu']:null));
+	$pro=(isset($_POST['pro'])?$_POST['pro']:(isset($_GET['pro'])?$_GET['pro']:null));
 	
 	$l= preg_replace('#\v#','',$l);
 	
@@ -91,7 +95,7 @@ if(!$erreur){
 	switch($action){
 		case "ajout";
 		
-		ajouterPlat($l,$q,$p);
+		ajouterPlat($l,$q,$p,$glu,$li,$pro,$id);
 		
 		break;
 		
@@ -173,6 +177,8 @@ echo $_POST['d'];}
 		</tr>
 		
 		
+		
+		
 		<?php       
 	}?>
 	
@@ -184,6 +190,11 @@ echo $_POST['d'];}
 		
 		</table>
 		
+		<h2>Votre cumul des plats est-t-il équilibré ? </h2> </br>
+		
+		<?php echo cumulEquilibre();?>
+		
+		<p>Vos plats doivent avoir pour etre equilibré : 11 à 15 % de protéines, 35 à 40 % de lipides et 50 à 55 % de glucides. </p>
 		
 		<p> total calorie :<?php echo calPanier();?></p>
 		<?php 

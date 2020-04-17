@@ -95,7 +95,9 @@ include("bdConnect.php");
 		$plat = htmlspecialchars($_POST['plat']);
 		$requete = $bdd->query('SELECT * FROM platboisson WHERE nomPlat LIKE "%'.$plat.'%" ORDER BY idP ');
 	while ($resultat = $requete->fetch()){
-	echo  $resultat['nomPlat']. "<br/>";
+	echo  $resultat['nomPlat']."_____";
+	echo $resultat['Energie']."cal      ";
+	?><a href="panier.php?action=ajout&amp;l=<?php echo  $resultat['nomPlat'];?>&amp;q=1&amp;id=<?php echo  $resultat['idP'];?>&amp;p=<?php echo $resultat['Energie']; ?>">______Ajouter </br></a><?php
 	}
 	
 	}
