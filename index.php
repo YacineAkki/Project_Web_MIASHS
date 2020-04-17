@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -62,6 +65,19 @@
    </tr>
    
    </table>
+   <?php
+            if(isset($_SESSION['user'])){
+
+                echo "Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3];
+                
+                echo "<br/>";
+               
+                
+                echo "<br/>";
+                echo'<a href= "templates/deconnexion.php">Se déconnecter</a> <br/>';
+                
+            }
+    ?>
    </section> 
 
     <footer>

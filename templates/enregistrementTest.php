@@ -8,6 +8,26 @@
 		<?php
 			
 
+			function FacteurCal($intensite){
+				$idcategorie;
+				if ($intensite==1) {
+					$facteurCal = 1.2;
+				}elseif ( $intensite==2) {
+					$facteurCal = 1.375;
+				}elseif ( $intensite==3) {
+					$facteurCal = 1.55;
+				}elseif ( $intensite==4) {
+					$facteurCal = 1.75;
+				}elseif ( $intensite==5) {
+					$facteurCal = 1.9;
+				
+				}else {
+					echo "erreur de calcul Facteur Calorie. Facteur calorie NOT FOUND";
+				}
+				
+				return $facteurCal;
+			}
+
 			
 
 			function CategorieIMC($imc){
@@ -45,12 +65,8 @@
 					return $diff->format("%Y");
 				}
 			
-				function enregistrerUser($dateNais, $taille, $poids){
-				
-                    //en registrement des donnes. cette fonction ne permets pas de remplir 
-                    // qbcoptimale et reelle. pour cela il faut deja regler le sport
-                    
-				
+				function enregistrerUser($dateNais, $taille, $poids, $nomSport){
+
 						$sexe= $_GET['Sexe'];
 						echo "Sexe = ".$sexe. "<br/>";
 
@@ -72,8 +88,21 @@
 						echo "vous avez: ". $age. "ans <br/>";
 
 						
+						$nomSport= $_GET['nomsport'];
+						echo "Nom sport = ".$nomSport. "<br/>";
+	
+						if($_GET['Activitésphysiques ']=="Non"){
+							$intensite= 1;
+						}else {
+							$intensite=  $_GET['nbsport'];
+						}
+
+						echo "Intensité = ".$intensite. "<br/>";
 			
-					
+						$facteurCal = FacteurCal($intensite);
+						echo "Facteur Calorie = ".$facteurCal. "<br/>";
+
+
 						//  calcul du metabolise de base
 						// c'est le nombre de calories par jour pour maintenir ses besoins métaboliques fondamentaux (Ce sont des kcal.)
 						$bmc ;
@@ -93,10 +122,14 @@
 
                     
 						  // categorie d'imc
-						  $idc = CategorieIMC('$imc');
+						  $idc = CategorieIMC($imc);
 						  echo "Catego IMC = ".$idc."<br/>";
 	  			
-	            
+						
+					// calcul du Qoptimale, Quantité optimale de calories quotidienne pour le User
+
+						$QBC = $bmc * $facteurCal;
+						echo "QBC optimale = ".$QBC."<br/>";
 	  		
 		            //connexion a la base de donnees
 	                $conn =  new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
@@ -110,19 +143,34 @@
 
 
 			        //Our SQL statement, which will select a list of tables from the current MySQL database.
-			            $sql = "INSERT INTO User (BMC, dateNais, poids,  taille, IMC, idC) VALUES('$bmc', '$dateNais','$poids','$taille','$imc','$idc')";
+			            $sql = "INSERT INTO User (BMC, dateNais, poids,  taille, IMC, idC, QBCOPTIMLE) VALUES('$bmc', '$dateNais','$poids','$taille','$imc','$idc','$QBC')";
                         echo($sql);
-	 
+						echo "<br/>";
 
 			        //Prepare our SQL statement,
 			            $statement = $conn->prepare($sql);
 
 	                //execute the statement
-			            $statement->execute();
-			
-	            }
+						$statement->execute();
+
+						echo'success ! <br/>';
+						
+						$sqlSport = "INSERT INTO Sport (niveauIntensite, nomSport) VALUES('$intensite', '$nomSport')";
+						echo($sqlSport);
+						echo "<br/>";
+
+					//Prepare our SQL statement,
+						$statementSport = $conn->prepare($sqlSport);
+
+					//execute the statement
+						$statementSport->execute();
+
+						echo'success Sport ! <br/>';
 				
-		        enregistrerUser($_GET['dateNais'],  $_GET['taille'],$_GET['poids']);
+					}
+				
+				
+		        enregistrerUser($_GET['dateNais'],  $_GET['taille'],$_GET['poids'], $_GET['nomsport'] );
 				
 		
 		        echo'<META http-equiv="refresh" content="5; URL=platsJournée/repasTest.php">';

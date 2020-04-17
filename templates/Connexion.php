@@ -42,7 +42,7 @@
                 <div class="input">
                     <label>Adresse e-mail :</label>
                     <?php
-                       echo '<input type="text" name="mail" value ='. $_POST['mail']. '/>';
+                       echo '<input type="text" name="mail" value ='. $_POST['mail']. '>';
                     ?>
                 </div>
 

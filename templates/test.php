@@ -105,14 +105,104 @@
 		
 
 
-			 <!-- plat type journalier -->
-		
-			
-			<div class="input" id="submit">
-                            <input type="submit" value="Passer à la suite">
-			</div>
-			
-		</form>
+			 <!-- Habitudes de vie -->
+                    
+			 <div> 
+                        <h1> Hygiène de vie </h1>
+                    
+                            <p id="parfait">C'est parfait! Interessons-nous un peu à vos habitudes de vie</p>
+                            <br/> 
+                            
+                            
+                        
+                        <!-- <button id="but5"> Habitudes de vie </button><br/>	 -->
+
+                    </div>
+
+                    
+
+                    <br/>
+
+                    <div class="input" id="div9">
+                        <h3>Pratiquez-vous des activités physiques ?</h3>  <br/>
+                        
+                                <select name="Activitésphysiques ">
+                                    <option>Oui</option>
+                                    <option>Non</option>
+                                </select>
+
+                        
+                            
+                        <p>
+                                Nom du sport :
+                                <input type="text" name="nomsport" value=" La marche"/>
+                         </p>
+
+                        <div class="input" id="sousDiv">
+                            <h3>Choisissez votre niveau d'activité physique</h3>
+                            <p> Avant de choisir, veuillez-vous référer au tableau ci-dessous présentant les niveaux d'activités.
+                            <h2>Tableau des niveaux d'activiés physique</h2>
+
+                                <table style="width:60%">
+                                <tr>
+                                    <th>Numero du niveau</th>
+                                    <th>Caractéristique du niveau</th> 
+                                    <th>Nombre d'heure/semaine</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Casi-inexistant</td>
+                                    <td>0</td>
+                                    
+                                    
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Très peu</td>
+                                    <td>0,33 (20 min)</td>
+                                    
+                                    
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Modéré</td>
+                                    <td>1 à 3</td>
+                                    
+                                    
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Soutenu</td>
+                                    <td>4 à 6</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td>5</td>
+                                    <td>intense</td>
+                                    <td>au moins 7</td>
+                                </tr>
+                                </table>
+
+                            </p>
+                            <label>Faites votre choix : </label>
+                            <select name="nbsport">
+                                <option>1 </option>
+                                <option>2</option>
+                                <option>3 </option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                    
+                    <div class="input" id="submit">
+                                    <input type="submit" value=" Passez à la suite">
+                    </div>
+                    
+                </form>
+
 
 		<script>
 			//  la fonction pour clicker

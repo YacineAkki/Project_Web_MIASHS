@@ -29,6 +29,8 @@ session_start();
 
                 //Our SQL statement, which will select the client from the current MySQL database.
                     $sql= "SELECT * FROM newClient WHERE mail='" . $_POST['mail']."' and motdepasse='" . $_POST['motdepasse']."'";
+                    echo($sql);
+                    echo "<br/>";
 
                 //Prepare our SQL statement,
                     $statement = $conn->prepare($sql);	
@@ -40,18 +42,22 @@ session_start();
     
                 //resultat de la requete
                 $resultat = $statement->fetch();
-                if ($resultat['id'] != "") {
-                    $_SESSION['client']= array($resultat['id'],$resultat['nom'],$resultat['prenom'],$resultat['mail'],$resultat['motdepasse']);
-                    echo "je suis ici";
-                    echo'<META http-equiv="refresh" content="10; URL=connexion.php">';	
+                
+                echo "<br/>";
+                if ($resultat['idNc'] != "") {
+                    $_SESSION['user']= array($resultat['id'],$resultat['nom'],$resultat['prenom'],$resultat['mail'],$resultat['motdepasse']);
+                    print_r($_SESSION['user']);
+                    echo "<br/>";
+                    echo "im here";
+                    echo'<META http-equiv="refresh" content="2; URL=../index.php">';
                 } else{
-                    echo "Bonjour Client!";
                     
-                    echo'<META http-equiv="refresh" content="10; URL=../index.php">';
+                    echo'<META http-equiv="refresh" content="2; URL=connexion.php">';
+                    
                 }
     
                 $resultat->closeCursor();   
-                echo "resultat reussi <br/>";
+               
 
 
             ?>
