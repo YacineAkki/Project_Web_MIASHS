@@ -8,7 +8,7 @@
 	
 				
 		    <?php
-		        echo'<META http-equiv="refresh" content="3; URL=../hygieneVie.php">';
+		        echo'<META http-equiv="refresh" content="3; URL=../resultat.php">';
 			 
 		
 			?>
