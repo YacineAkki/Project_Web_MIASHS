@@ -38,7 +38,7 @@
 		<table >
 		<tr>
  <td>
- <a href="templates/journéePlats/etape3.php" ><img  id="grand" onmouseover="overParagraphe('grand')" onmouseout= "outParagraphe('grand')" src="ressources/cal.png" width="300"></a></td>
+ <a href="templates/platsJournée/etape3.php" ><img  id="grand" onmouseover="overParagraphe('grand')" onmouseout= "outParagraphe('grand')" src="ressources/cal.png" width="300"></a></td>
  <td>____</td>
  <td><a href="templates/test.php" ><img  id="2" onmouseover="overParagraphe('2')" onmouseout= "outParagraphe('2')" src="ressources/test.jpg" width="300" ></a></td>
  </tr>
