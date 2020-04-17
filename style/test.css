@@ -3,7 +3,7 @@ body{
     padding: 40px;
 }
 
-h1{
+h2,h1{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -16,15 +16,16 @@ h3{
     
 }
 
+
 .etape1{
-    display: none;
+    sdisplay: none;
 }
 
 .etape2{
     text-align: center;
     margin: 20px;
     margin-top: 5px;
-    display: none;
+    ddisplay: block;
 
 }
 

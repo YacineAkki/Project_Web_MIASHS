@@ -6,87 +6,60 @@
 
 	<head>
 		<title>Test</title>
-		<meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
-		<script type="text/javascript" src="test.js"></script>
-		<link rel="stylesheet" href="styles/test.css" type="text/css" media="screen"/>
-		<link rel="stylesheet" href="../style/model.css">
-		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="../scripts/jquery-3.4.1.min.js"></script>
-        <script src="../scripts/app.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="../style/test.css" type="text/css" media="screen"/>
 	</head>
 	<body>
+
+
 		<header>
-            <div class="logo-container">
-                <a href="../../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
-            </div>
-                <div class="container-menu-nav">
-                    <nav class="top-menu-nav">
-                        <ul class="top-menu">
-                            <li><a href="../index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
-							<li><a href="platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
-                            <li><a href="test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
-                            <li><a href="apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
-                            <li><a href="contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                            <li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-                            <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
-                        </ul>
-                    </nav>
-                <div class="toggle"><span></span></div>
-            </div>
-        </header>
-    	<section>
-		<script>
-			
-			function fct(choix){
-				if(choix == 1){
-					var pchoix = document.getElementById("pchoix1"); 
-					
-					pchoix.innerHTML = "
-					<?php
-						$_GET['femme'] = TRUE;
-					?>
-					"; 
-					
-				} else if (choix== 2) {
-					var pchoix = document.getElementById("pchoix2"); 
-					pchoix.innerHTML = "
-					<?php
-						$_GET['homme'] = TRUE;
-					?>
-					"; 
-				}
-			}	
-		</script>
+	        <div class="logo-container">
+	            <a href="index.php"><img src="ressources/logo.png" alt="description" id="logo"></a>
+	        </div>
+	        <div class="container-menu-nav">
+	            <nav class="top-menu-nav">
+	                <ul class="top-menu">
+	                    <li><a href="../index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
+	                    <li><a href="test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
+	                    <li><a href="apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+	                    <li><a href="contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
+	                    <li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+	                    <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
+	                </ul>
+	            </nav>
+	            <div class="toggle"><span></span></div>
+	        </div>
+    	</header>
+
 
 		<form action="enregistrementTest.php" method="get" autocomplete="off">
 			<div>
+			
 				<h1>Commencer le test</h1>
-					<p> Salut! Je suis le professeur Test. C'est moi qui vais m'occuper de votre Body Check... euhh 
-						c'est plus un Nutri Check, si vous voyer ce que je veux dire.</p>
-					<p>Pour pouvoir effectuer mes calculs j'ai besoins de vous connaitre vous et vos habitudes alimentaires.</p>
+					<p> Salut ! Je suis le professeur Test. C'est moi qui vais m'occuper de votre Body Check... euhh 
+						C'est plus un Nutri Check, si vous voyer ce que je veux dire.</p>
+					<p>Pour pouvoir effectuer mes calculs, j'ai besoin de vous connaître vous et vos habitudes alimentaires.</p>
 					<br/> 
-					<button onclick = "display('etape1')"> Commençons par vous : </button><br/>	
+					<!-- <button onclick = "bouton('div1'),bouton('div0'),bouton('div2'),bouton('div3')"> Commençons par vous : </button><br/>	 -->
+
+				<h2> Commençons par vous !</h2>
+				
+
+					
 			</div>
+			
+			
 
 			<div class="etape1" id="div0">
-				<input type="checkbox" onclick="fct(1)"> Femme<br> <p id="pchoix1"><p>
-				<p id="pchoix1"><p>
-				<input type="checkbox" onclick="fct(2)"> Homme<br> <p id="pchoix2"><p>
-				<p id="pchoix2"><p>
+
+					<h3>Choix du sexe </h3>
+
+					Tapez 1 dans le champ qui correspond à votre sexe. <br/>
+						<label>Femme</label>
+						<input type="number" name= "Femme" value= "0" min="0" max="1" reqired>  <br/> 
+						<label>Homme</label>
+						<input type="number" name= "Homme" value= "0" min="0" max="1"  reqired>  <br/> 
+
             </div>
-
-			<div class="etape1" id="div1">
-				
-				<h3>Quel est votre date de naissance ? : </h3>
-				<br/>	
-				<label for="datenais">Date de naissance:</label>
-
-					<input type="date" id="datenais" name="datenais"
-       					value="2020-03-22"
-       				min="1950-01-01" max="2020-12-31" required>
-
-			</div>
-
 				
 			<div class="etape1" id="div2">
 				<h3>Quel taille faite-vous? <br/>	</h3>
@@ -96,205 +69,68 @@
             </div>
 
 			<div class="etape1" id="div3">
-			<h3>Combien pesez vous? <strong> Ne vous inquitez pas, c'est entre nous</strong></h3><br/>	
+			<h3>Combien pesez-vous? </h3><strong> Ne vous inquiétez pas, c'est entre nous</strong><br/>	
             	  <label>Votre poids (en kilo):</label>
-                 <input type="number" step="0.01" name="poids" value= " 55" required>
+                 <input type="number" step="0.01" name="poids" value= "50" required>
 
 			</div>
 			
-		
-
-
-
-
-
-<<<<<<< HEAD
-			 <!-- plat type journalier -->
-			<div>
 			
-					<p>Maintenant que les présentations sont faites, c'est le moment de voir plus en détails ce que vous consommer par jour.
-					 
-					Donnez-moi, un exemple de repas (plats, boissons, snacks etc ...) que vous manger aux moments de la journée ci-dessous :</p>
-					<br/> 
-					
-				<button onclick = "displayid('div4')" id="but2"> Le matin : </button><br/>	
-		
-			</div>
-
-			<div class="etape2" id="div4">
-				Que prenez- vous les matins?<br/>	
-            	  <label> repas :</label>
-                 <input type="text" name="matin" value= "kj" required>
-
-			</div>
 			
-				<button  onclick = "displayid('div5')" id="but2"> À midi : </button><br/>	
 
-			<div class="etape2" id="div5">
-				Que prenez- vous à midi?<br/>	
-            	  <label> repas :</label>
-                 <input type="text" name="matin" value= "ijk" required>
-
-            </div>
-
-			<button onclick = "displayid('div6')" id="but3"> Au goûter : </button><br/>	
-
-			<div class="etape2" id="div6">
-				Snack time
+			<div class="etape1" id="div1">
+				
+				<h3>Quelle est votre date de naissance ?  </h3>
 				<br/>	
-            	  <label> repas :</label>
-                 <input type="text" name="matin" value= "lj" required>
-				
+				<label for="datenais">Date de naissance:</label>
 
-			</div
-			
-				<button onclick = "displayid('iv7')" id="but4"> Le soir : </button><br/>	
+					<input type="date" id="datenais" name="datenais"
+       					value="1997-03-22"
+       				min="1950-01-01" max="2020-12-31" required>
 
-			<div class="etape2" id="div7">
-				Que prenez- vous à le soir?<br/	
-            	  <label> repas :</label>
-                 <input type="text" name="matin" value= " gh" required>            </div>
+			</div>
 
-=======
 			
->>>>>>> 56e73a9553d1fd8ac83df9fba84e09153eee4b24
-			<!-- Habitudes de vie -->
-			
-			<div>
-			
-					<p id="parfait">C'est parfait! Interessons-nous un peu à vos habitudes de vie</p>
-					<br/> 
-					
-					
-				
-				<label>	Vos habitudes de vie :</label><br/>	
 		
-			</div>
 
-			<div class="input" id="div8">
-			<p>
-				Êtes-vous un fumeur?  <br/>	
-<<<<<<< HEAD
-            	  <label>fumeur:</label>
-                 <input type="boolean" name="fumer" value= " non" required>
 
-				<?php 
-
-					$fumer = $_POST['fumer'];
-						if( $fumer == True){
-							echo'à quel fréquence ?';
-							echo'<label>fréquence:</label>
-							<input type="number" name="frequence" value= "">';
-						}
-=======
-            	  <label>fumeur:</label></br>
-                 <select name="fumer">
-					<option>Oui</option>
-					<option>Non</option>
-				</select>
-			</p>
-				
-				<p>
-				<label>à quelle frequence fumez-vous? </label></br>
-                 <select name="freq">
-					<option>Je ne fume pas </option>
-					<option>moins de 5 par semaine</option>
-					<option>moins de 3 par jour</option>
-					<option>moins de 10 par jour </option>
-					<option>plus de 10 par jour</option>
->>>>>>> 56e73a9553d1fd8ac83df9fba84e09153eee4b24
-					
-				</select>
-				
-				</p>
-
-            </div>
-
-			<div class="input" id="div9">
-			
-			<p>
-				Pratiquez vous un sport?  <br/>	
-<<<<<<< HEAD
-            	  <label>Sport:</label>
-                 <input type="boolean" name="sport" value= " non">
-
-				<?php 
-					$sport = $_POST['sport'];
-						if( $sport == True){
-
-							echo'Lequel ?';
-							echo'<label>Nom du Sport:</label>
-							<input type="text" name="nomSport" value= "">';
-
-							echo'combien de fois par semaine ?';
-							echo'<label>fréquence Sport:</label>
-							<input type="number" name="frequenceSport" value= "">';
-						}
-					
-				?>
-=======
-            	  
-                 <select name="Sport">
-					<option>Oui</option>
-					<option>Non</option>
-				</select>
-			</p>
-				
-				<p>
-Nom du sport :
-<input type="text" name="nomsport" value=""/>
-</p>
-				
-				
-				<p>
-				<label>combien de fois par semaine :</label></br>
-                 <select name="nbsport">
-					<option>1 </option>
-					<option>2</option>
-					<option>3 </option>
-					<option>4</option>
-					<option>plus de 4 </option>
-				</select>
-				</p>
-				
-			
->>>>>>> 56e73a9553d1fd8ac83df9fba84e09153eee4b24
-
-			</div>
+			 <!-- plat type journalier -->
+		
 			
 			<div class="input" id="submit">
-                            <input type="submit" value="Valider">
-			</div>
-			
-			<div class="input" id="submit">
-                            <input type="submit" value="Valider">
+                            <input type="submit" value="Passer à la suite">
 			</div>
 			
 		</form>
-	</section>
-		<footer>
-        <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
-             <li>Adresse : Route de Mende, 34090 Montpellier</li>
-             <li>Téléphone : 04 67 14 20 00</li>
-             <li>Type : Université en France</li>
-             <li>Président : Patrick Gilli</li>
-             <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/universit%C3%A9" class="liens">A propos</a></li>
 
-        </ul>
-        <ul> <h3>Qui sommes nous ?</h3>
-             <li>Etudiants en 3ème année de Licence MIASHS</li>
-             <li>Domaine Data Science</li>
-             <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/formations/offre-de-formation/licence-lmd-XA/sciences-humaines-et-sociales-SHS/licence-mathematiques-et-informatique-appliquees-aux-sciences-humaines-et-sociales-miashs-program-licence-miashs.html" class="liens">Licence MIASHS (Maths info appliquée aux SHS)</a></li>
-             <li><a href="contact.php" class="liens">Contact</a></li>
-        </ul>
-        <ul id="listfooterright"> <h3>Développeurs</h3> 
-             <li>Moulika</li>
-             <li>Yacine</li>
-             <li>Johanna</li>
-             <li>Justin</li>
-             <li>Berk</li>
-        </ul>
-    </footer>
+		<script>
+			//  la fonction pour clicker
+					function bouton(div1){
+					//alert(getComputedStyle(div1).display);
+					let d1 = document.getElementById(div1);
+					if(getComputedStyle(d1).display != "none"){
+					
+					d1.style.display = "none";
+					} else {
+					d1.style.display = "block";
+					}
+					}
+
+					function boutonClass(div1){
+						
+						let d1 = document.getElementsByClassName(div1);
+						
+						if(getComputedStyle(d1).display != "none"){
+						
+							d1.style.display = "none";
+						} else {
+							d1.style.display = "block";
+						}
+					}
+
+		</script> 
+
+
 
 	</body>
 
