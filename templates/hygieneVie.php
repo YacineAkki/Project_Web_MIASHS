@@ -61,46 +61,76 @@
                     <br/>
 
                     <div class="input" id="div9">
-                    <h3>Pratiquez vous un sport?</h3>  <br/>
-                    
-                            <select name="Sport">
-                                <option>Oui</option>
-                                <option>Non</option>
-                            </select>
-
-                        <!-- <label>Sport</label>
-                        <input type="boolean" name="sport" value= "course "> -->
+                        <h3>Pratiquez-vous des activités physiques ?</h3>  <br/>
                         
-                        <p>
-                            Nom du sport :
-                            <input type="text" name="nomsport" value=" La course à pieds"/>
-                        </p>
+                                <select name="Activités physiques ">
+                                    <option>Oui</option>
+                                    <option>Non</option>
+                                </select>
 
-                        <p>
-                        <label>combien de fois par semaine :</label></br>
-                        <select name="nbsport">
-                            <option>1 </option>
-                            <option>2</option>
-                            <option>3 </option>
-                            <option>4</option>
-                            <option>plus de 4 </option>
-                        </select>
-                        </p>
-
-                        <?php 
-                            $sport = $_POST['sport'];
-                                if( $sport == True){
-
-                                    echo'Lequel ?';
-                                    echo'<label>Nom du Sport:</label>
-                                    <input type="text" name="nomSport" value= "">';
-
-                                    echo'combien de fois par semaine ?';
-                                    echo'<label>fréquence Sport:</label>
-                                    <input type="number" name="frequenceSport" value= "">';
-                                }
+                        
                             
-                        ?>
+                        <p>
+                                Nom du sport :
+                                <input type="text" name="nomsport" value=" La marche"/>
+                         </p>
+
+                        <div class="input" id="sousDiv">
+                            <h3>Choisissez votre niveau d'activité physique</h3>
+                            <p> Avant de choisir, veuillez-vous référer au tableau ci-dessous présentant les niveaux d'activités.
+                            <h2>Tableau des niveaux d'activiés physique</h2>
+
+                                <table style="width:60%">
+                                <tr>
+                                    <th>Numero du niveau</th>
+                                    <th>Caractéristique du niveau</th> 
+                                    <th>Nombre d'heure/semaine</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Casi-inexistant</td>
+                                    <td>0</td>
+                                    
+                                    
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Très peu</td>
+                                    <td>0,33 (20 min)</td>
+                                    
+                                    
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Modéré</td>
+                                    <td>1 à 3</td>
+                                    
+                                    
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Soutenu</td>
+                                    <td>4 à 6</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td>5</td>
+                                    <td>intense</td>
+                                    <td>au moins 7</td>
+                                </tr>
+                                </table>
+
+                            </p>
+                            <label>Faites votre choix : </label>
+                            <select name="nbsport">
+                                <option>1 </option>
+                                <option>2</option>
+                                <option>3 </option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
 
                     </div>
                     
