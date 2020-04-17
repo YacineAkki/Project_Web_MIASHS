@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 30, 2020 at 11:46 AM
+-- Generation Time: Apr 17, 2020 at 02:48 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -1757,10 +1757,17 @@ CREATE TABLE `PRATIQUER` (
 --
 
 CREATE TABLE `Sport` (
+  `idS` int(11) NOT NULL,
   `nomSport` varchar(50) NOT NULL,
-  `DuréeSport` double NOT NULL,
-  `idS` int(11) NOT NULL
+  `niveauIntensite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Sport`
+--
+
+INSERT INTO `Sport` (`idS`, `nomSport`, `niveauIntensite`) VALUES
+(1, ' La marche', 1);
 
 -- --------------------------------------------------------
 
@@ -1770,15 +1777,37 @@ CREATE TABLE `Sport` (
 
 CREATE TABLE `User` (
   `idm` int(11) NOT NULL,
-  `taille` int(11) NOT NULL,
-  `poids` int(11) NOT NULL,
-  `dateNais` date NOT NULL,
-  `IMC` int(11) NOT NULL,
-  `BMC` int(11) NOT NULL,
-  `QBCRÉELLE` int(11) NOT NULL,
-  `QBCOPTIMLE` int(11) NOT NULL,
-  `idC` int(11) NOT NULL
+  `taille` double DEFAULT NULL,
+  `poids` double DEFAULT NULL,
+  `dateNais` date DEFAULT NULL,
+  `IMC` double DEFAULT NULL,
+  `BMC` double DEFAULT NULL,
+  `QBCRÉELLE` double DEFAULT NULL,
+  `QBCOPTIMLE` double DEFAULT NULL,
+  `idC` int(11) NOT NULL,
+  `idNC` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `User`
+--
+
+INSERT INTO `User` (`idm`, `taille`, `poids`, `dateNais`, `IMC`, `BMC`, `QBCRÉELLE`, `QBCOPTIMLE`, `idC`, `idNC`) VALUES
+(6, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(7, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(8, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(9, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(10, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(11, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(12, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(13, 160, 50, '1997-03-22', 19.53125, 1394.6, NULL, NULL, 1, NULL),
+(14, 160, 50, '1997-03-22', 19.53125, 1394.6, NULL, NULL, 1, NULL),
+(15, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(16, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(17, 160, 50, '1997-03-22', 19.53125, 1394.6, NULL, NULL, 1, NULL),
+(18, 170, 57, '1986-05-13', 19.723183391003, 1363.1, NULL, NULL, 1, NULL),
+(19, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL),
+(20, 160, 50, '1997-03-22', 19.53125, 1324.9, NULL, NULL, 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -1794,8 +1823,8 @@ ALTER TABLE `CategorieImc`
 -- Indexes for table `Engendrer`
 --
 ALTER TABLE `Engendrer`
-  ADD KEY `idI` (`idI`),
-  ADD KEY `idC` (`idC`);
+  ADD KEY `idC` (`idC`),
+  ADD KEY `idI` (`idI`);
 
 --
 -- Indexes for table `Incidence`
@@ -1833,8 +1862,8 @@ ALTER TABLE `PlatBoisson`
 -- Indexes for table `PRATIQUER`
 --
 ALTER TABLE `PRATIQUER`
-  ADD KEY `idS` (`idS`),
-  ADD KEY `idUser` (`idm`);
+  ADD KEY `idUser` (`idm`),
+  ADD KEY `idS` (`idS`);
 
 --
 -- Indexes for table `Sport`
@@ -1847,23 +1876,30 @@ ALTER TABLE `Sport`
 --
 ALTER TABLE `User`
   ADD PRIMARY KEY (`idm`),
-  ADD KEY `idNc` (`idC`);
+  ADD KEY `idIMC` (`idC`),
+  ADD KEY `idNc` (`idNC`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `newClient`
+-- AUTO_INCREMENT for table `JournéeUser`
 --
-ALTER TABLE `newClient`
-  MODIFY `idNc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `JournéeUser`
+  MODIFY `idJ` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `Sport`
+--
+ALTER TABLE `Sport`
+  MODIFY `idS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `idm` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
@@ -1873,7 +1909,7 @@ ALTER TABLE `User`
 -- Constraints for table `Engendrer`
 --
 ALTER TABLE `Engendrer`
-  ADD CONSTRAINT `idC` FOREIGN KEY (`idC`) REFERENCES `TABLE 10` (`idC`),
+  ADD CONSTRAINT `idC` FOREIGN KEY (`idC`) REFERENCES `CategorieImc` (`idC`),
   ADD CONSTRAINT `idI` FOREIGN KEY (`idI`) REFERENCES `Incidence` (`idI`);
 
 --
@@ -1893,15 +1929,14 @@ ALTER TABLE `Manger`
 -- Constraints for table `PRATIQUER`
 --
 ALTER TABLE `PRATIQUER`
-  ADD CONSTRAINT `idS` FOREIGN KEY (`idS`) REFERENCES `Sport` (`idS`),
   ADD CONSTRAINT `idUser` FOREIGN KEY (`idm`) REFERENCES `User` (`idm`);
 
 --
 -- Constraints for table `User`
 --
 ALTER TABLE `User`
-  ADD CONSTRAINT `idCatIMC` FOREIGN KEY (`idC`) REFERENCES `TABLE 10` (`idC`),
-  ADD CONSTRAINT `idNc` FOREIGN KEY (`idC`) REFERENCES `newClient` (`idNc`);
+  ADD CONSTRAINT `idIMC` FOREIGN KEY (`idC`) REFERENCES `CategorieImc` (`idC`),
+  ADD CONSTRAINT `idNc` FOREIGN KEY (`idNC`) REFERENCES `newClient` (`idNc`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
