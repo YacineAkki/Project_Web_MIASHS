@@ -9,7 +9,7 @@
 		<meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="test.js"></script>
 		<link rel="stylesheet" href="../style/test.css" type="text/css" media="screen"/>
-		<link rel="stylesheet" href="../style/model.css">
+		<link rel="stylesheet" href="..style/model.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="../scripts/jquery-3.4.1.min.js"></script>
         <script src="../scripts/app.js" type="text/javascript"></script>
@@ -35,105 +35,99 @@
             </div>
         </header>
     	<section>
-		<form action="enregistrementTest.php" method="get" autocomplete="off">
-			<div>
-			
-				<h1>Commencer le test</h1>
-					<p> Salut ! Je suis le professeur Test. C'est moi qui vais m'occuper de votre Body Check... euhh 
-						C'est plus un Nutri Check, si vous voyer ce que je veux dire.</p>
-					<p>Pour pouvoir effectuer mes calculs, j'ai besoin de vous connaître vous et vos habitudes alimentaires.</p>
-					<br/> 
-					<!-- <button onclick = "bouton('div1'),bouton('div0'),bouton('div2'),bouton('div3')"> Commençons par vous : </button><br/>	 -->
 
-				<h2> Commençons par vous !</h2>
-				
+        <!-- Johanna, adapte cette partie à la tienne. C'est le questionnaire concernant la partie repas. -->
+        <!-- Pense aussi en l'enchaînement avec la partie sur l'hygiène de vie. -->
 
-					
-			</div>
-			
+        <form action="enregistrementTest2.php" method="get" autocomplete="off">
 			
 
-			<div class="etape1" id="div0">
 
-					<h3>Choix du sexe </h3>
+            <!-- plat type journalier -->
+           <div>
+                   <h1> Habitude de vie Alimentaire </h1>
+           
+                   <p>Maintenant que les présentations sont faites, c'est le moment de voir plus en détails ce que vous consommer par jour.<br/> 
+                    
+                   Donnez-moi, un exemple de repas (plats, boissons, snacks etc ...) que vous manger aux moments de la journée ci-dessous :</p>
+                   <br/> 
+                   
+               <button onclick = "bouton('div4')" id="but2"> Le matin  </button><br/>	
+       
+           </div>
 
-					Tapez 1 dans le champ qui correspond à votre sexe. <br/>
-						<label>Femme</label>
-						<input type="number" name= "Femme" value= "0" reqired>  <br/> 
-						<label>Homme</label>
-						<input type="number" name= "Homme" value= "0" reqired>  <br/> 
+           <div class="etape2" id="div4">
+           <h3>Que prenez- vous les matins?</h3><br/>	
+                 <label> repas :</label>
+                <input type="text" name="matin" value= "oeufs dures" required>
 
-            </div>
-				
-			<div class="etape1" id="div2">
-				<h3>Quel taille faite-vous? <br/>	</h3>
-            	  <label>Votre taille (en cm) :</label>
-                 <input type="number"  name="taille" value= "160" required>
+           </div>
+           
+               <button  onclick = "bouton('div5')" id="but2"> À midi  </button><br/>	
 
-            </div>
+           <div class="etape2" id="div5">
+           <h3>Que prenez- vous à midi?</h3><br/>	
+                 <label> repas :</label>
+                <input type="text" name="matin" value= " oeufs dures" required>
 
-			<div class="etape1" id="div3">
-			<h3>Combien pesez-vous? </h3><strong> Ne vous inquiétez pas, c'est entre nous</strong><br/>	
-            	  <label>Votre poids (en kilo):</label>
-                 <input type="number" step="0.01" name="poids" value= "50" required>
+           </div>
 
-			</div>
-			
-			
-			
+           <button onclick = "bouton('div6')" id="but3"> Au goûter  </button><br/>	
 
-			<div class="etape1" id="div1">
-				
-				<h3>Quelle est votre date de naissance ?  </h3>
-				<br/>	
-				<label for="datenais">Date de naissance:</label>
+           <div class="etape2" id="div6">
+               Snack time
+               <br/>	
+                 <label> repas :</label>
+                <input type="text" name="matin" value= "oeufs dures" required>
+               
 
-					<input type="date" id="datenais" name="datenais"
-       					value="1997-03-22"
-       				min="1950-01-01" max="2020-12-31" required>
+           </div>
+           
+               <button onclick = "bouton('div7')" id="but4"> Le soir  </button><br/>	
 
-			</div>
+           <div class="etape2" id="div7">
+           <h3>Que mangez- vous le soir?</h3><br/>	
+                 <label> repas :</label>
+                <input type="text" name="matin" value= "" required>
 
-			
-		
+           </div>
 
+       
+           
+           <div class="input" id="submit">
+                           <input type="submit" value="Valider">
+           </div>
+           
+       </form>
 
-			 <!-- plat type journalier -->
-		
-			
-			<div class="input" id="submit">
-                            <input type="submit" value="Passer à la suite">
-			</div>
-			
-		</form>
+       <script>
+           //  la fonction pour clicker
+                   function bouton(div1){
+                   //alert(getComputedStyle(div1).display);
+                   let d1 = document.getElementById(div1);
+                   if(getComputedStyle(d1).display != "none"){
+                   
+                   d1.style.display = "none";
+                   } else {
+                   d1.style.display = "block";
+                   }
+                   }
 
-		<script>
-			//  la fonction pour clicker
-					function bouton(div1){
-					//alert(getComputedStyle(div1).display);
-					let d1 = document.getElementById(div1);
-					if(getComputedStyle(d1).display != "none"){
-					
-					d1.style.display = "none";
-					} else {
-					d1.style.display = "block";
-					}
-					}
+                   function boutonClass(div1){
+                       
+                       let d1 = document.getElementsByClassName(div1);
+                       
+                       if(getComputedStyle(d1).display != "none"){
+                       
+                           d1.style.display = "none";
+                       } else {
+                           d1.style.display = "block";
+                       }
+                   }
 
-					function boutonClass(div1){
-						
-						let d1 = document.getElementsByClassName(div1);
-						
-						if(getComputedStyle(d1).display != "none"){
-						
-							d1.style.display = "none";
-						} else {
-							d1.style.display = "block";
-						}
-					}
+       </script> 
 
-		</script> 
-	</section>
+        </section>
 		<footer>
         <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
              <li>Adresse : Route de Mende, 34090 Montpellier</li>

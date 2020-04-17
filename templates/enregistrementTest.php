@@ -126,18 +126,18 @@
 		        enregistrerUser($_GET['dateNais'],  $_GET['taille'],$_GET['poids']);
 				
 		
-		        echo'<META http-equiv="refresh" content="1; URL=platsJournée/repasTest_à_adapter.php">';
-			 
-		
-			
-				
-				
-				
-				
-				
+		        echo'<META http-equiv="refresh" content="5; URL=platsJournée/repasTest.php">';
 			 
 		
 			?>
+		
+	
+		
+	</head>
+
+</html>
+
+
 		
 	
 		
