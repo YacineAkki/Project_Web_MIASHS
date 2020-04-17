@@ -8,6 +8,8 @@ function creationPanier(){
 		$_SESSION['panier']['calPlat']=array();
 		$_SESSION['panier']['quantPlat']=array();
 		
+		
+		
 		echo "crée";
 		
 	}

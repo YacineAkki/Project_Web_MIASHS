@@ -15,12 +15,12 @@ if(!isset($_SESSION)){
                 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
                 <script src="../../scripts/jquery-3.4.1.min.js"></script>
                 <script src="../../scripts/app.js" type="text/javascript"></script>
-
+				<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+				
 		
 	</head>
 	
 	<body>
-	
 	
 	<header>
             <div class="logo-container">
@@ -42,7 +42,9 @@ if(!isset($_SESSION)){
             </div>
         </header>
 	
-
+<div style="width:65%">
+<canvas id="graph1"></canvas>
+</div>
 
 <?php
 include("bdConnect.php");
@@ -79,7 +81,66 @@ if($d!="" and $c!=""  ) {
 }
 }
 
+
+
+$data = array();
+$label = array();
+
+$bd2= getBD();
+$requete = $bd2->query('SELECT CalTotal,date FROM journéeuser  ORDER BY date ');
+while ($resultat = $requete->fetch()){
+	$data[] +=  $resultat['CalTotal'] ;
+	}
+$req2 = sprintf("SELECT date FROM journéeuser ORDER BY date");
+
+$result = $bd2->query($req2);
+
+foreach($result as $row){
+	$label[]=$row;
+}
+	
+print json_encode($data);
+print json_encode($label);
 ?>
+<script>
+
+Chart.defaults.global.title.display=true;
+Chart.defaults.global.title.text="Votre suivi:";
+
+
+
+</script>
+
+
+<script>
+
+
+var ctx = document.getElementById('graph1').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['bla'],
+        datasets: [{
+            label: 'calorie par jour',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [10]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+	
+});
+
+</script>
+
+<form action="enregistrementTest2.php">
+<input type="submit" value="Suite du test">
+</form>
+
 
 
 <footer>
