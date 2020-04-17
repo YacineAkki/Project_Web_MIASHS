@@ -51,11 +51,10 @@
                     // qbcoptimale et reelle. pour cela il faut deja regler le sport
                     
 				
-						$Femme= $_GET['Femme'];
-						echo "Femme = ".$Femme. "<br/>";
+						$sexe= $_GET['Sexe'];
+						echo "Sexe = ".$sexe. "<br/>";
 
-						$Homme= $_GET['Homme'];
-						echo "Homme = ".$Homme. "<br/>";
+						
 
 				        $dateNais=  $_GET['datenais'];
 						echo "Date de Naissance ".$dateNais. "<br/>";
@@ -78,10 +77,10 @@
 						//  calcul du metabolise de base
 						// c'est le nombre de calories par jour pour maintenir ses besoins métaboliques fondamentaux (Ce sont des kcal.)
 						$bmc ;
-                        if ($Femme == 1) {
+                        if ($sexe == "Femme") {
 							echo("im here <br/>");
                             $bmc= 665+(9.6 * $poids) + (1.8 * $taille) - (4.7 * $age);
-                        } else if ($Homme == 1){
+                        } else if ($sexe == "Homme"){
 							echo("somewhere <br/>");
 							$bmc= 66+(13.7 * $poids) + (5 * $taille) - (6.8 * $age) ;
 							echo "im out <br/>";

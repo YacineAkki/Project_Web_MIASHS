@@ -58,10 +58,17 @@
 					<h3>Choix du sexe </h3>
 
 					Tapez 1 dans le champ qui correspond à votre sexe. <br/>
-						<label>Femme</label>
-						<input type="number" name= "Femme" value= "0" reqired>  <br/> 
-						<label>Homme</label>
-						<input type="number" name= "Homme" value= "0" reqired>  <br/> 
+					<br/>
+						<label>Sexe</label>
+							<select name="Sexe" >
+                                <option>Femme</option>
+                                <option>Homme</option>
+                            </select>
+							
+							
+							
+						
+						
 
             </div>
 				

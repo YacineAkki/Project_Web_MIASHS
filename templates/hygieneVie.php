@@ -68,12 +68,12 @@
                                 <option>Non</option>
                             </select>
 
-                        <label>Sport</label>
-                        <input type="boolean" name="sport" value= "course ">
+                        <!-- <label>Sport</label>
+                        <input type="boolean" name="sport" value= "course "> -->
                         
                         <p>
                             Nom du sport :
-                            <input type="text" name="nomsport" value=""/>
+                            <input type="text" name="nomsport" value=" La course à pieds"/>
                         </p>
 
                         <p>
