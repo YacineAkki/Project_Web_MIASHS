@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+?><!DOCTYPE html>
+
 <!DOCTYPE html>
 <html>
 
@@ -124,6 +129,16 @@
 						  // categorie d'imc
 						  $idc = CategorieIMC($imc);
 						  echo "Catego IMC = ".$idc."<br/>";
+
+
+						if(isset($_SESSION['user'])){
+							$idNC = $_SESSION['user'][1];
+							print_r($idNC);
+					
+						}else {
+							$idNC = 'NULL';
+						}
+					
 	  			
 						
 					// calcul du Qoptimale, Quantité optimale de calories quotidienne pour le User
@@ -132,7 +147,7 @@
 						echo "QBC optimale = ".$QBC."<br/>";
 	  		
 		            //connexion a la base de donnees
-	                $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
+	                $conn = new PDO('mysql:host=localhost;dbname=heathyyou;charset=utf8', 'root', 'root');
 	                if ($conn->connect_error){
 	                    die("Connection failed: " . $conn->connect_error);
 	                }
@@ -143,7 +158,7 @@
 
 
 			        //Our SQL statement, which will select a list of tables from the current MySQL database.
-			            $sql = "INSERT INTO User (BMC, dateNais, poids,  taille, IMC, idC, QBCOPTIMLE) VALUES('$bmc', '$dateNais','$poids','$taille','$imc','$idc','$QBC')";
+			            $sql = "INSERT INTO User (BMC, dateNais, poids,  taille, IMC, idC, QBCOPTIMLE, idNC) VALUES('$bmc', '$dateNais','$poids','$taille','$imc','$idc','$QBC','$idNC')";
                         echo($sql);
 						echo "<br/>";
 
@@ -168,6 +183,7 @@
 						echo'success Sport ! <br/>';
 				
 					}
+
 				
 				
 		        enregistrerUser($_GET['dateNais'],  $_GET['taille'],$_GET['poids'], $_GET['nomsport'] );

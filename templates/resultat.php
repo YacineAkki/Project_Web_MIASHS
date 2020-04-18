@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+
+
+<?php
+session_start();
+?><!DOCTYPE html>
 
 
 <html>
@@ -8,7 +12,7 @@
 		<title>Test</title>
 		<meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="test.js"></script>
-		<link rel="stylesheet" href="styles/test.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="../style/test.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="../style/model.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="../scripts/jquery-3.4.1.min.js"></script>
@@ -40,66 +44,23 @@
 
                 <div>
                 <?php
-                    function CategorieIMC($imc){
-                        $idcategorie;
-                        if ($imc<16) {
-                            $idcategorie = 1;
-                        }elseif ( $imc < 18.5 and $imc>16.5) {
-                            $idcategorie = 2;
-                        }elseif ( $imc < 25 and $imc>18.5) {
-                            $idcategorie = 3;
-                        }elseif ( $imc < 30 and $imc>25) {
-                            $idcategorie = 4;
-                        }elseif ( $imc < 35 and $imc>30) {
-                            $idcategorie = 5;
-                        }elseif ( $imc < 40 and $imc>35) {
-                            $idcategorie = 6;
-                        }elseif ( $imc>40) {
-                            $idcategorie = 7;
-                        }else {
-                            echo "erreur de calcul IMC. Category NOT FOUND";
-                        }
-                        
-                        return $idcategorie;
+                    echo"hey Ya! <br/>";
+                    if(isset($_SESSION['user'])){
+
+                        echo'Vous êtes connecter'; 
+                        print_r( $_SESSION['user']);
+                
+                
+                    }else {
+                     echo'veuillez-vous connecter'.'<br/>'; 
                     }
 
-                    function getCatIMC($idcategorie){
-
-                         //connexion a la base de donnees
-                         $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
-                         if ($conn->connect_error){
-                             die("Connection failed: " . $conn->connect_error);
-                         }
-                         else{
-                             echo "Connected successfully <br/>";
-                         
-                         }
-
-                        $sqlCatIMC = "SELECT * FROM CategorieImc WHERE idC=".$idcategorie;
-						echo($sqlCatIMC);
-                        echo "<br/>";
-
-                        //Prepare our SQL statement,
-                        $statementCatIMC = $conn->prepare($sql);	
-        
-                        //Execute the statement.
-                            $statementCatIMC->execute();
-            
-                            echo "query reussi <br/>";
-            
-                        //resultat de la requete
-                        $resultatCatIMC = $statementCatIMC->fetch();
-                        echo "<br/>";
-
-                        $nomCat = array($resultatCatIMC['nomCategorieImc']);
-                         return $nomCat;
-                    }
-
-                    function getUser($userId){
-                        $userId = $_SESSION['user'].[0];
+                    // function getUser($userId){
+                        $userId = $_SESSION['user'][1];
+                       echo($userId);
 
                         //connexion a la base de donnees
-                        $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
+                        $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','root');
                         if ($conn->connect_error){
                             die("Connection failed: " . $conn->connect_error);
                         }
@@ -108,7 +69,7 @@
                         
                         }
 
-                        $sqlUser = "SELECT * FROM USER WHERE idm=".$userId;
+                        $sqlUser = "SELECT * FROM USER WHERE idNC=".$userId;
 						echo($sqlUser);
                         echo "<br/>";
 
@@ -122,24 +83,28 @@
                             echo "query reussi <br/>";
             
                         //resultat de la requete
+                        
                         $resultat = $statement->fetch();
+                      
+                        echo $resultat['IMC'];
+                        
+                        
+                        
                         
                         echo "<br/>";
-
+                        
                         $infosUser = array($resultat['IMC'],$resultat['BMC'],$resultat['QBCOPTIMLE']);
+                        // print_r($infosUser);
 
                         return $infosUser;
-                    }
+                    // }
 
-                   
-                    $info = getUser($_SESSION['user'].[0]);
-                    $idcatIMC = CategorieIMC($info[0]);
-                    $nomCatIMC= getCatIMC($idcatIMC);
+                    // $info = getUser($_SESSION['user']);
+                    // print_r($info);
+
                     
-                    echo" Pour fonctionner, votre organisme à besoin de ".$info[1]."de calorie au minimums. Cependant, par rapport à votre mode de vie et à vos mensurations, la quantité de calories quotidienne idéale pour vous est de  ".$info[2]."calories";
-                    echo "<br/>";
-                    echo "Votre Indice de Masse Corporelle est de ".info[0].". Vous faite donc partie de la catégorie ".$nomCatIMC;
-
+                   
+                    
                 ?>
 
                 

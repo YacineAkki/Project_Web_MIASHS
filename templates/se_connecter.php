@@ -42,7 +42,7 @@ session_start();
     
                 //resultat de la requete
                 $resultat = $statement->fetch();
-                
+                // print_r($resultat);
                 echo "<br/>";
                 if ($resultat['idNc'] != "") {
                     //correction idnc

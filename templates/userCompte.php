@@ -93,7 +93,7 @@ session_start();
                     function getCatIMC($idcategorie){
 
                          //connexion a la base de donnees
-                         $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
+                         $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','root');
                          if ($conn->connect_error){
                              die("Connection failed: " . $conn->connect_error);
                          }
