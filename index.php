@@ -22,15 +22,19 @@ session_start();
         </div>
         <div class="container-menu-nav">
             <nav class="top-menu-nav">
+
+
                 <ul class="top-menu">
                     <li><a href="index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
 					<li><a href="templates/platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
                     <li><a href="templates/test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
                     <li><a href="templates/apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
                     <li><a href="templates/contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                    <li id="nav-moncompte"><a href="templates/Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+                    <li id="nav-moncompte"><a href="templates/resultat.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
                     <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
                 </ul>
+
+                
             </nav>
             <div class="toggle"><span></span></div>
         </div>
@@ -68,11 +72,10 @@ session_start();
    <?php
             if(isset($_SESSION['user'])){
 
-                echo "Bonjour ".$_SESSION['user'][2]." ,".$_SESSION['user'][3];
+                echo "Bonjour ".$_SESSION['user'][2];
                 
                 echo "<br/>";
-               
-                
+
                 echo "<br/>";
                 echo'<a href= "templates/deconnexion.php">Se déconnecter</a> <br/>';
 				

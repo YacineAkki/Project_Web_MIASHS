@@ -44,3 +44,33 @@ button{
     color: #60AD42;
     font-size: 80%;
 }
+
+
+
+.compte{
+    color: black;
+    border: indianred solid 1px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    margin: 15px;
+   clear: both;
+    display: block;
+    padding: 15px;
+
+
+    
+}
+
+#decon{
+     
+    margin-right: 40%;
+
+}
+.tot{
+    display: block;
+    margin-bottom: 30%;
+    margin-top: 5%;
+}
+
+

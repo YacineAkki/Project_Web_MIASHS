@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 
 
@@ -11,10 +15,17 @@
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="../scripts/jquery-3.4.1.min.js"></script>
         <script src="../scripts/app.js" type="text/javascript"></script>
+
+        <?php
+                    if(isset($_SESSION['user'])){
+                        echo'<META http-equiv="refresh" content="1; URL=userCompte.php">';
+                        
+                    }
+            ?>
     </head>
 
     <body>
-
+    
         <header>
             <div class="logo-container">
                 <a href="../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
@@ -33,7 +44,12 @@
                 <div class="toggle"><span></span></div>
             </div>
         </header>
-                
+            <?php
+                    if(isset($_SESSION['user'])){
+                        echo'<META http-equiv="refresh" content="0; URL=userCompte.php">';
+                        
+                    }
+            ?>
         <div id="container">
             
             <!-- saisi des inputs --> 

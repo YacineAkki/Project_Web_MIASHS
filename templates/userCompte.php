@@ -1,44 +1,71 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
+<html lang="fr">
 
-
-<html>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-	<head>
-		<title>Test</title>
+    <head>
+		<title>Body Check</title>
 		<meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="test.js"></script>
-		<link rel="stylesheet" href="styles/test.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="../style/test.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="../style/model.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="../scripts/jquery-3.4.1.min.js"></script>
         <script src="../scripts/app.js" type="text/javascript"></script>
 	</head>
-	<body>
-		<header>
-            <div class="logo-container">
-                <a href="../../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
-            </div>
-                <div class="container-menu-nav">
-                    <nav class="top-menu-nav">
-                        <ul class="top-menu">
-                            <li><a href="../index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
-							<li><a href="platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
-                            <li><a href="test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
-                            <li><a href="apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
-                            <li><a href="contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                            <li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-                            <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
-                        </ul>
-                    </nav>
-                <div class="toggle"><span></span></div>
-            </div>
-        </header>
-    	<section>
 
-                <h1> Votre résultat</h1>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
+        </div>
+        <div class="container-menu-nav">
+            <nav class="top-menu-nav">
+                <ul class="top-menu">
+                    <li><a href="../index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
+					<li><a href="platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
+                    <li><a href="test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
+                    <li><a href="apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+                    <li><a href="contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
+                    <li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+                    <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
+                </ul>
+            </nav>
+            <div class="toggle"><span></span></div>
+        </div>
+    </header>
 
-                <div>
+    <section>
+         
+
+            <div class="salut" id="bonj"> 
+                <h1>
+                <?php
+                echo "Bonjour  ".$_SESSION['user'][2];
+                ?>
+                </h1>
+            </div>
+           <div class="tot">
+                <div class="compte" id="decon"> 
+                    <h3>
+                    <?php
+                    echo'<a href= "deconnexion.php">Se déconnecter</a> <br/>';
+                    ?>
+                    </h3>
+                </div>
+
+                <div class="compte" id="historiq"> 
+                    <h3>
+                    <?php
+                    echo'<a href= "platsJournée/p.php">voir mon historique</a> <br/>';
+                    ?>
+                    </h3>
+                </div>
+
+            </div>
+
+            <div>
                 <?php
                     function CategorieIMC($imc){
                         $idcategorie;
@@ -135,21 +162,26 @@
                     $info = getUser($_SESSION['user'].[0]);
                     $idcatIMC = CategorieIMC($info[0]);
                     $nomCatIMC= getCatIMC($idcatIMC);
-                    
-                    echo" Pour fonctionner, votre organisme à besoin de ".$info[1]."de calorie au minimums. Cependant, par rapport à votre mode de vie et à vos mensurations, la quantité de calories quotidienne idéale pour vous est de  ".$info[2]."calories";
-                    echo "<br/>";
-                    echo "Votre Indice de Masse Corporelle est de ".info[0].". Vous faite donc partie de la catégorie ".$nomCatIMC;
 
-                ?>
+                    ?>
+
+                    <p>
+                        <?php
+                        
+                            echo" Pour fonctionner, votre organisme à besoin de ".$info[1]."de calorie au minimums. Cependant, par rapport à votre mode de vie et à vos mensurations, la quantité de calories quotidienne idéale pour vous est de  ".$info[2]."calories";
+                            echo "<br/>";
+                            echo "Votre Indice de Masse Corporelle est de ".info[0].". Vous faite donc partie de la catégorie ".$nomCatIMC;
+                        ?>
+                    </p>
 
                 
 
             </div>
 
 
+   </section> 
 
-        </section>
-		<footer>
+    <footer>
         <ul id="listfooterleft"> <h3>Université Paul Valéry</h3> 
              <li>Adresse : Route de Mende, 34090 Montpellier</li>
              <li>Téléphone : 04 67 14 20 00</li>
@@ -162,7 +194,7 @@
              <li>Etudiants en 3ème année de Licence MIASHS</li>
              <li>Domaine Data Science</li>
              <li class="lienfooter"><a href="https://www.univ-montp3.fr/fr/formations/offre-de-formation/licence-lmd-XA/sciences-humaines-et-sociales-SHS/licence-mathematiques-et-informatique-appliquees-aux-sciences-humaines-et-sociales-miashs-program-licence-miashs.html" class="liens">Licence MIASHS (Maths info appliquée aux SHS)</a></li>
-             <li><a href="contact.php" class="liens">Contact</a></li>
+             <li><a href="templates/contact.php" class="liens">Contact</a></li>
         </ul>
         <ul id="listfooterright"> <h3>Développeurs</h3> 
              <li>Moulika</li>
@@ -172,7 +204,7 @@
              <li>Berk</li>
         </ul>
     </footer>
+    
 
-	</body>
-
+</body>
 </html>
