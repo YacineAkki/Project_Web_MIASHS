@@ -66,7 +66,7 @@
                     function getCatIMC($idcategorie){
 
                          //connexion a la base de donnees
-                         $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
+                         $conn =  new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
                          if ($conn->connect_error){
                              die("Connection failed: " . $conn->connect_error);
                          }
@@ -99,7 +99,7 @@
                         $userId = $_SESSION['user'].[0];
 
                         //connexion a la base de donnees
-                        $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
+                        $conn = new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
                         if ($conn->connect_error){
                             die("Connection failed: " . $conn->connect_error);
                         }
