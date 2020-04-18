@@ -46,7 +46,8 @@ session_start();
                 echo "<br/>";
                 if ($resultat['idNc'] != "") {
                     //correction idnc
-                    $_SESSION['user']= array($resultat['idNc'],$resultat['nom'],$resultat['prenom'],$resultat['mail'],$resultat['motdepasse']);
+                    $_SESSION['user']=
+ array($resultat['nom'],$resultat['idNc'],$resultat['prenom'],$resultat['mail'],$resultat['motdepasse']);
                     print_r($_SESSION['user']);
                     echo "<br/>";
                     echo "im here";

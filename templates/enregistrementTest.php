@@ -132,7 +132,7 @@
 						echo "QBC optimale = ".$QBC."<br/>";
 	  		
 		            //connexion a la base de donnees
-	                $conn =  new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
+	                $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
 	                if ($conn->connect_error){
 	                    die("Connection failed: " . $conn->connect_error);
 	                }

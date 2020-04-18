@@ -11,9 +11,12 @@ function creationPanier(){
 		$_SESSION['panier']['li']=array();
 		$_SESSION['panier']['pro']=array();
 		
+		if (isset($_SESSION['user'])){
+		$_SESSION['panier']['idC']=array();
+		array_push($_SESSION['panier']['idC'],$_SESSION['user'][0]);
 		
 		
-		
+		}
 		
 		
 	}

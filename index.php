@@ -68,13 +68,15 @@ session_start();
    <?php
             if(isset($_SESSION['user'])){
 
-                echo "Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3];
+                echo "Bonjour ".$_SESSION['user'][2]." ,".$_SESSION['user'][3];
                 
                 echo "<br/>";
                
                 
                 echo "<br/>";
                 echo'<a href= "templates/deconnexion.php">Se déconnecter</a> <br/>';
+				
+				echo'<a href= "templates/platsJournée/p.php">voir mon historique</a> <br/>';
                 
             }
     ?>
