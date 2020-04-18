@@ -55,7 +55,6 @@
                             <li>Telephone : 04 67 14 20 00</li>
                             <li>Adresse : Route de Mende, 34090 Montpellier</li>
                             <li>Président de l'Université : Patrick Gilli</li>
-                            <img src="../ressources/UPVMlogo.jpg" id="logouniv">
                         </ul>
                         <img src="../ressources/UniuPaulva.jpg">
                     </div>

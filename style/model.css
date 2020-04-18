@@ -50,9 +50,17 @@ footer{
     width: 100%;
 }
 
+.contactUniv h3{
+    text-align: center;
+}
 
+.contactUniv{
+    padding-right: 35px;
+}
 
-
+.contactEquipe h3{
+    text-align: center;
+}
 .logo-container {
     margin: -50px 10px 10px 60px;
     float: left;
