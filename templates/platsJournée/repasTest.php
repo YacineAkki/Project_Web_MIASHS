@@ -17,7 +17,6 @@ include("bdConnect.php");
 		<title>Test</title>
 <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 	           
-			   <link rel="stylesheet" href="../../style/test.css" type="text/css" media="screen"/>
 	            <link rel="stylesheet" href="../../style/connexionRelated.css" type="text/css" media="screen"/>
                 <link rel="stylesheet" href="../../style/model.css">
                 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,23 +41,9 @@ include("bdConnect.php");
                             <li><a href="../test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
                             <li><a href="../apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
                             <li><a href="../contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-							
-                        <li id="nav-moncompte">
-						<?php
-            if(isset($_SESSION['user'])){
-
-                
-          echo'<a href= "../deconnexion.php" class="link"> Se déconnecter<i class="fa fa-user-circle-o" aria-hidden="true"></i></a> <br/>';
-                
-            }else{?>
-			
-			<li id="nav-moncompte"><a href="../Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-			<?php 
-			} 
-    ?>
-	</li>
-	<li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
-	</ul>
+                            <li id="nav-moncompte"><a href="../Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+                            <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
+                        </ul>
                     </nav>
                 <div class="toggle"><span></span></div>
             </div>
@@ -66,10 +51,6 @@ include("bdConnect.php");
     	<section>
 
         <!-- questionnaire concernant la partie repas. -->
-		
-		<h2>Ici vous pouvez entrer vos repas pour une journée donnée.</br>
-		  Recherchez un plat et ajoutez le à votre journée! </h2>
-		
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
@@ -116,10 +97,11 @@ include("bdConnect.php");
 	while ($resultat = $requete->fetch()){
 	echo  $resultat['nomPlat']."_____";
 	echo $resultat['Energie']."cal      ";
-	?><a href="panier.php?action=ajout&amp;l=<?php echo  $resultat['nomPlat'];?>&amp;q=1&amp;glu=<?php echo  $resultat['Glucides'];?>&amp;li=<?php echo  $resultat['Lipides'];?>&amp;pro=<?php echo  $resultat['Proteines'];?>&amp;id=<?php echo  $resultat['idP'];?>&amp;p=<?php echo $resultat['Energie']; ?>">______Ajouter </br></a><?php
+	?><a href="panier.php?action=ajout&amp;l=<?php echo  $resultat['nomPlat'];?>&amp;q=1&amp;id=<?php echo  $resultat['idP'];?>&amp;p=<?php echo $resultat['Energie']; ?>">______Ajouter </br></a><?php
 	}
 	
 	}
+	
 	
 	
 	

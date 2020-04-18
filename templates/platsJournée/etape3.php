@@ -15,7 +15,6 @@ include("bdConnect.php");
 
 <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 	           
-			   <link rel="stylesheet" href="../../style/test.css" type="text/css" media="screen"/>
 	            <link rel="stylesheet" href="../../style/connexionRelated.css" type="text/css" media="screen"/>
                 <link rel="stylesheet" href="../../style/model.css">
                 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -63,9 +62,7 @@ include("bdConnect.php");
         </header>
 	
 	
-	<h2>Ici vous pouvez entrer vos repas pour une journée donnée.</br>
-		  Recherchez un plat et ajoutez le à votre journée! </h2>
-		
+	
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	

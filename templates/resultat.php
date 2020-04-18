@@ -44,60 +44,8 @@ session_start();
 
                 <div>
                 <?php
-<<<<<<< HEAD
                     echo"hey Ya! <br/>";
-                    if(isset($_SESSION['user']){
-                    function CategorieIMC($imc){
-                        $idcategorie;
-                        if ($imc<16) {
-                            $idcategorie = 1;
-                        }elseif ( $imc < 18.5 and $imc>16.5) {
-                            $idcategorie = 2;
-                        }elseif ( $imc < 25 and $imc>18.5) {
-                            $idcategorie = 3;
-                        }elseif ( $imc < 30 and $imc>25) {
-                            $idcategorie = 4;
-                        }elseif ( $imc < 35 and $imc>30) {
-                            $idcategorie = 5;
-                        }elseif ( $imc < 40 and $imc>35) {
-                            $idcategorie = 6;
-                        }elseif ( $imc>40) {
-                            $idcategorie = 7;
-                        }else {
-                            echo "erreur de calcul IMC. Category NOT FOUND";
-                        }
-                        
-                        return $idcategorie;
-                    }
-
-                    function getCatIMC($idcategorie){
-
-                         //connexion a la base de donnees
-                         $conn =  new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
-                         if ($conn->connect_error){
-                             die("Connection failed: " . $conn->connect_error);
-                         }
-                         else{
-                             echo "Connected successfully <br/>";
-                         
-                         }
-
-                        $sqlCatIMC = "SELECT * FROM CategorieImc WHERE idC=".$idcategorie;
-						echo($sqlCatIMC);
-                        echo "<br/>";
-
-                        //Prepare our SQL statement,
-                        $statementCatIMC = $conn->prepare($sql);	
-        
-                        //Execute the statement.
-                            $statementCatIMC->execute();
-            
-                            echo "query reussi <br/>";
-            
-                        //resultat de la requete
-                        $resultatCatIMC = $statementCatIMC->fetch();
-                        echo "<br/>";
->>>>>>> 5bb0f6f35198e077b0db2bb74259958e280adf89
+                    if(isset($_SESSION['user'])){
 
                         echo'Vous êtes connecter'; 
                         print_r( $_SESSION['user']);
@@ -112,9 +60,7 @@ session_start();
                        echo($userId);
 
                         //connexion a la base de donnees
-<<<<<<< HEAD
                         $conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','root');
-=======
                         if ($conn->connect_error){
                             die("Connection failed: " . $conn->connect_error);
                         }
