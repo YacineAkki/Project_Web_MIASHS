@@ -30,6 +30,10 @@ footer{
     padding: 0px;
 }
 
+#listfooterleft{
+    float: left;
+}
+
 .liens{
     text-decoration: none;
     color: white;
@@ -40,6 +44,29 @@ footer{
     margin-top: 20px;
 }
 
+#contactcorps{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 50px;
+
+}
+
+.contactUniv{
+    padding-right: 30px;
+}
+
+.contactUniv img{
+    margin-top: 10px;
+}
+
+.contactUniv h3{
+    text-align: center;
+}
+.contactUniv ul{
+    float: right;
+
+}
 .liens:hover{
     color: #5fad4d;
 }

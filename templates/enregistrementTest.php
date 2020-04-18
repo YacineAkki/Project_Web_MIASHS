@@ -1,4 +1,4 @@
-
+≈
 <?php
 session_start();
 ?><!DOCTYPE html>
@@ -36,8 +36,7 @@ session_start();
 			
 
 			function CategorieIMC($imc){
-				$idcategorie;
-				if ($imc<16) {
+				$idcategorie;				if ($imc<16) {
 					$idcategorie = 1;
 				}elseif ( $imc < 18.5 and $imc>16.5) {
 					$idcategorie = 2;
@@ -147,7 +146,7 @@ session_start();
 						echo "QBC optimale = ".$QBC."<br/>";
 	  		
 		            //connexion a la base de donnees
-	                $conn = new PDO('mysql:host=localhost;dbname=heathyyou;charset=utf8', 'root', 'root');
+	                $conn =  new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
 	                if ($conn->connect_error){
 	                    die("Connection failed: " . $conn->connect_error);
 	                }
@@ -189,16 +188,14 @@ session_start();
 		        enregistrerUser($_GET['dateNais'],  $_GET['taille'],$_GET['poids'], $_GET['nomsport'] );
 				
 		
-		        echo'<META http-equiv="refresh" content="5; URL=platsJournée/repasTest.php">';
+		        echo'<META http-equiv="refresh" content="5; URL=platsJournée/repasTest.php">';
 			 
 		
 			?>
 		
 	
 		
-	</head>
-
-</html>
+	
 
 
 		

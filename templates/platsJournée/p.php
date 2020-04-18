@@ -89,9 +89,15 @@ function enregistrer ($cal,$d,$idNc){
 
 if($d!="" and $c!=""  ) {
 	
+if(isset($_SESSION['user'])){
 	
 	enregistrer($c,$d,floatval($_SESSION['user'][1]));
 	
+}
+else{
+	
+	enregistrer($c,$d,0);
+}
 	echo "<h2> Voila ! Le &nbsp; &nbsp;", $d ," &nbsp; &nbsp; vous avez mangé  &nbsp; &nbsp;  ", $c ,"&nbsp; &nbsp; calorie.</h2>";
 	
 	
@@ -108,17 +114,19 @@ if($d!="" and $c!=""  ) {
 $calo = array();
 $dateJ = array();
 
+if(isset($_SESSION['user'])){
+	?><table width= 550px; border = 2px;><tr><td> Date </td><td>Calories</td></tr><<?php
 echo "<h2> voici l'historique de vos journée </h2></br>";
 $bd2= getBD();
 $requete = $bd2->query('SELECT CalTotal,date FROM journéeuser where idm='.$_SESSION['user'][1].' ORDER BY date ');
 while ($resultat = $requete->fetch()){
 	
-	echo "<table width= 550px; border = 2px;> <tr><td> DATE</td> <td> calories </td></tr> <tr> <td> ".$resultat['date']. "</td> <td>".$resultat['CalTotal']."</td></tr>";
+	echo " <tr> <td> ".$resultat['date']. "</td> <td>".$resultat['CalTotal']."</td></tr>";
 	$calo[] +=  $resultat['CalTotal'] ;
 	$dateJ[] .= $resultat['date'];
 	}
-
-	
+?></table><?php
+}
  json_encode($calo);
 json_encode($dateJ);
 
