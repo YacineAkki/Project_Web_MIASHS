@@ -44,6 +44,15 @@ footer{
     color: #5fad4d;
 }
 
+#contactsection{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+
 .logo-container {
     margin: -50px 10px 10px 60px;
     float: left;

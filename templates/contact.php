@@ -36,8 +36,29 @@
                     </div>
                 </header>
                 
-                <section>
-                    
+                <section id="contactsection">
+                    <div class="contactEquipe">
+                        <h3>Nous contactez ?</h3>
+                        <ul>
+                            <li>Monika Alaka : Monika.Alaka@etu.univ-montp3.fr</li><br>
+                            <li>Yacine Akki : Yacine.Akki@etu.univ-montp3.fr</li><br>
+                            <li>Johanna Fricon : Johanna.Fricon@etu.univ-montp3.fr</li><br>
+                            <li>Justin Celestin : justine.celestin@etu.univ-montp3.fr</li><br>
+                            <li>Justin Celestin : Justine.celestin@etu.univ-montp3.fr</li><br>
+                            <li>Berk Kayin : Berk.Kayin@etu.univ-montp3.fr</li>
+                        </ul>
+                        <img src="../ressources/contact-us.png">
+                    </div>
+                    <div class="contactUniv">
+                        <h3>Université Paul Valéry</h3>
+                        <ul>
+                            <li>Telephone : 04 67 14 20 00</li>
+                            <li>Adresse : Route de Mende, 34090 Montpellier</li>
+                            <li>Président de l'Université : Patrick Gilli</li>
+                            <img src="../ressources/UPVMlogo.jpg" id="logouniv">
+                        </ul>
+                        <img src="../ressources/UniuPaulva.jpg">
+                    </div>
                 </section>
 
                 
