@@ -23,6 +23,18 @@ footer{
     height: 300px;
 }
 
+#contactsection{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.contactEquipe{
+    margin-left: 150px;
+}
+
+.contactUniv{
+    margin-right: 170px;
+}
 #listfooterright{
     margin-right: 140px;
 }
