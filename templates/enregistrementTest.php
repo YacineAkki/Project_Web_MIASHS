@@ -17,24 +17,37 @@ session_start();
 
 <body>
     <header>
-        <div class="logo-container">
-            <a href="index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
-        </div>
-        <div class="container-menu-nav">
-            <nav class="top-menu-nav">
-                <ul class="top-menu">
-                    <li><a href="../index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
-					<li><a href="platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
-                    <li><a href="test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
-                    <li><a href="apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
-                    <li><a href="contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                    <li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-                    <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
-                </ul>
-            </nav>
-            <div class="toggle"><span></span></div>
-        </div>
-    </header>
+            <div class="logo-container">
+                <a href="../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
+            </div>
+                <div class="container-menu-nav">
+                    <nav class="top-menu-nav">
+                        <ul class="top-menu">
+                            <li><a href="../index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
+							<li><a href="platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
+                            <li><a href="test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
+                            <li><a href="apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+                            <li><a href="contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
+							
+							<?php
+							if(isset($_SESSION['user'])){
+
+                
+								?> <li id="nav-moncompte"><a href= "Connexion.php" class="link"> <?php echo $_SESSION['user'][2];?><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li> 
+                
+								<?php 
+								}else{?>
+			
+									<li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+									<?php 
+								} 
+							?>
+							<li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
+							</ul>
+							</nav>
+				<div class="toggle"><span></span></div>
+			</div>
+        </header>
 
     <section>
          
@@ -43,7 +56,7 @@ session_start();
 			function getCatIMC($idcategorie){
 
 				//connexion a la base de donnees
-				$conn =  new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','root');
+				$conn =   new PDO('mysql:host=localhost:8889;dbname=heathyYou;','root', 'root');
 				if ($conn->connect_error){
 					die("Connection failed: " . $conn->connect_error);
 				}
@@ -186,7 +199,7 @@ session_start();
 						}
 
 						// echo "im out <br/>";
-						echo" Pour fonctionner, votre organisme à besoin de ".$bmc." de calories au minimums. <br/>"; 
+						echo" Pour fonctionner, votre organisme à besoin de ".$bmc." de calories au minimum. <br/>"; 
 						echo"<br/>";
                     
 						  // categorie d'imc
@@ -194,7 +207,7 @@ session_start();
 						//   echo "Catego IMC = ".$idc."<br/>";
 
 						  $nomCat = getCatIMC($idc);
-						  echo "Votre Indice de Masse Corporelle est de ".$imc."<br/>";
+						  echo "Votre Indice de Masse Corporelle est de ".$imc.".<br/>";
 						  echo"<br/>";
 
 
@@ -211,10 +224,12 @@ session_start();
 					// calcul du Qoptimale, Quantité optimale de calories quotidienne pour le User
 
 						$QBC = $bmc * $facteurCal;
-						echo ' Cependant, par rapport à votre mode de vie et à vos mensurations, la quantité de calories quotidienne idéale pour vous est de  '.$QBC.' calories <br/>';
+						$_SESSION['user']['besoinCal']=array();
+				$_SESSION['user']['besoinCal']=$QBC;
+						echo ' Cependant, par rapport à votre mode de vie et à vos mensurations, la quantité de calories quotidienne idéale pour vous est de  '.$QBC.' calories. <br/>';
 						echo"<br/>";
 		            //connexion a la base de donnees
-	                $conn = new PDO('mysql:host=localhost;dbname=heathyyou;charset=utf8', 'root', 'root');
+	                $conn = new PDO('mysql:host=localhost;dbname=heathyyou;charest=utf8','root','');
 	                if ($conn->connect_error){
 	                    die("Connection failed: " . $conn->connect_error);
 	                }
@@ -250,12 +265,13 @@ session_start();
 						// echo'success Sport ! <br/>';
 
 
-					echo "Vous pouvez maintenant aller dans la rubrique pour Calorie, pour analyser votre alimentation !   Hop là! C'est juste un tout petit peu en haut! ";
+					echo "Vous pouvez maintenant aller dans la rubrique  Calorie, pour analyser votre alimentation !   Hop là! C'est juste un tout petit peu plus haut! ";
 				
 				}
 
-				enregistrerUser($_GET['dateNais'],  $_GET['taille'],$_GET['poids'], $_GET['nomsport'] );
-				?>
+				@enregistrerUser($_GET['dateNais'],$_GET['taille'],$_GET['poids'], $_GET['nomsport'] );
+				
+			?>
            
    </section> 
 

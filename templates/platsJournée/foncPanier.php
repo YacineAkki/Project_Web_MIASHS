@@ -1,4 +1,6 @@
 <?php
+
+/* creation panier */
 function creationPanier(){
 	if(!isset($_SESSION['panier'])){
 		
@@ -25,7 +27,7 @@ function creationPanier(){
 
 
 
-
+/* ajout*/
 
 function ajouterPlat($nomPlat,$quantPlat,$calPlat,$glu,$li,$pro,$idP){
 	
@@ -58,7 +60,7 @@ function ajouterPlat($nomPlat,$quantPlat,$calPlat,$glu,$li,$pro,$idP){
 
 
 
-
+/* changement quantité*/
 
 function modifierQuantPlat($nomPlat,$quantPlat){
 	
@@ -88,7 +90,7 @@ function modifierQuantPlat($nomPlat,$quantPlat){
 
 
 
-
+/* supprimer un plat */
 
 function supprimerPlat($nomPlat){
 	
@@ -131,7 +133,7 @@ else{
 	
 	
 	
-	
+	/* compte nb de plats */
 	
 	function compterPlat(){
 		
@@ -143,6 +145,7 @@ else{
 	}
 	
 	
+	/* supprime le panier */
 	
 	function supprimerPanier(){
 		
@@ -153,15 +156,8 @@ else{
 		
 	}
 	
-	function suprr($nomPlat){
-		
-		for($i=0; $i<count($_SESSION['panier']['nomPlat']);$i++){
-			if($_SESSION['panier']['nomPlat'][$i]==$nomPlat){
-				unset($_SESSION['panier'][$i]);
-			}
-			
-		}
-	}
+	
+	/* compte les calories totale du panier*/
 	
 	
 	function calPanier (){
@@ -184,7 +180,7 @@ else{
 	
 	
 	
-	
+	/* indique le pourcentage de proteines , lipides, glucides dans le panier + indique si le total est equilibré */
 	
 	function cumulEquilibre(){
 		$equi= "pas de plat";

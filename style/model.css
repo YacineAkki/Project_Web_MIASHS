@@ -44,23 +44,6 @@ footer{
     color: #5fad4d;
 }
 
-#contactsection{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.contactUniv h3{
-    text-align: center;
-}
-
-.contactUniv{
-    padding-right: 35px;
-}
-
-.contactEquipe h3{
-    text-align: center;
-}
 .logo-container {
     margin: -50px 10px 10px 60px;
     float: left;
@@ -220,6 +203,8 @@ ul {
 
 
 }
+
+/* page calorie*/
 .petit{
 	width: 10px;
 	
@@ -267,11 +252,50 @@ table{
 	margin-left:23%;
 	margin-right:23%;
 	text-align:center-left;
+	border-color:orange;
+	height:100px;
 	
 	
 }
-
+/* acc */
 .lienTest{
 	margin-top:0%;
 	background-color:#F5B6B5;
+}
+h1{
+	text-align: center;
+	color:orange;
+	}
+	
+h2{
+	text-align: center;
+	color:orange;
+}
+
+/* contact */
+# contactcorps {
+    affichage : flex;
+    justifier-contenu : espace autour;
+    largeur : 100 % ;
+    marge en bas : 50 px ;
+
+}
+
+. contactUniv {
+    rembourrage à droite : 30 px ;
+}
+
+. contactUniv  img {
+    marge supérieure : 10 px ;
+}
+
+. contactUniv  h3 {
+    alignement du texte : centre;
+}
+. contactUniv  ul {
+    flotteur : à droite;
+
+}
+# listfooterleft {
+    flotteur : gauche;
 }

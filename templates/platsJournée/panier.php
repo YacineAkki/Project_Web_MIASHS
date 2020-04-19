@@ -4,6 +4,8 @@ if(!isset($_SESSION)){
 }
 
 ?>
+
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>tous-les-plats </title>
@@ -13,9 +15,8 @@ if(!isset($_SESSION)){
 	            <link rel="stylesheet" href="../../style/connexionRelated.css" type="text/css" media="screen"/>
                 <link rel="stylesheet" href="../../style/model.css">
                 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-                <script src="../../scripts/jquery-3.4.1.min.js"></script>
                 <script src="../../scripts/app.js" type="text/javascript"></script>
-
+				<script src="../../scripts/jquery-3.4.1.min.js"></script>
 		
 	</head>
 	
@@ -35,32 +36,23 @@ if(!isset($_SESSION)){
                             <li><a href="../apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
                             <li><a href="../contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
 							
-                        <li id="nav-moncompte">
-						<?php
-            if(isset($_SESSION['user'])){
-
+							<?php
+							if(isset($_SESSION['user'])){
+									?> <li id="nav-moncompte"><a href= "../Connexion.php" class="link"> <?php echo $_SESSION['user'][2];?><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li> 
                 
-          echo'<a href= "../deconnexion.php" class="link"> Se déconnecter<i class="fa fa-user-circle-o" aria-hidden="true"></i></a> <br/>';
-                
-            }else{?>
+							<?php }else{?>
 			
-			<li id="nav-moncompte"><a href="../Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-			<?php 
-			} 
-    ?>
-	</li>
-	<li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
-	</ul>
+								<li id="nav-moncompte"><a href="../Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+								<?php 
+							} 
+							?>
+							<li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
+							</ul>
                     </nav>
                 <div class="toggle"><span></span></div>
             </div>
         </header>
-
-
-
-
-
-
+		<section>
 <?php
 
 include("foncPanier.php");
@@ -73,7 +65,7 @@ if($action!==null){
 	if(!in_array($action,array("ajout","suppression","refresh")))
 	
 	$erreur= true;
-	
+	/* remplissage des variable pour manipulation*/
 	$l=(isset($_POST['l'])?$_POST['l']:(isset($_GET['l'])?$_GET['l']:null));
 	$q=(isset($_POST['q'])?$_POST['q']:(isset($_GET['q'])?$_GET['q']:null));
 	$p=(isset($_POST['p'])?$_POST['p']:(isset($_GET['p'])?$_GET['p']:null));
@@ -144,65 +136,61 @@ if(isset($_GET['deletepanier'])&& $_GET['deletepanier']==true){
 if(creationPanier()){
 	
 
-$nbplats= count($_SESSION['panier']['nomPlat']);
-
-if($nbplats <= 0){
-	echo "Oups, Vous n'avez pas selectionné de plat. </br> Vous n'avez rien mangé aujourd'hui? ";
-	?><p><a href="etape3.php">ajouter des plats </a> </p><?php
+	$nbplats= count($_SESSION['panier']['nomPlat']);
+/* pas de plat selectionné*/
+	if($nbplats <= 0){
+		echo "Oups, Vous n'avez pas selectionné de plat. </br> Vous n'avez rien mangé aujourd'hui? ";
+		?><p><a href="etape3.php">ajouter des plats </a> </p><?php
 	
-}else{
-	?>
-	
-	<form method="post" action="">
-
-	
- <table >
-<tr>
-<td><label for="start">Vos plat du :</label>
-
-<input type="date" id="d" name="d"
-       value="2020-04-20"
-       min="2020-01-01" max="2020-12-31"></td>
-<td><input class="petit" type="submit" value="ok"></td>
-</tr>
-</table>
-<?php
-if(isset($_POST['d'])){
-echo $_POST['d'];}
-?>
- 
-<table border=1>
-<tr>
-<td>plats</td>
-<td>calorie</td>
-<td>quantité</td>
-<td>action</td>
-</tr>
-	<?php
-	for($i=0;$i<$nbplats;$i++){
+	}else{
 		?>
-		
-		<tr>
-		<td><br/><?php echo $_SESSION['panier']['nomPlat'][$i];?></td>
-		
-		<td><br/><?php echo $_SESSION['panier']['calPlat'][$i];?></td>
-		<td><br/><input name="q[]"  value="<?php echo $_SESSION['panier']['quantPlat'][$i];?> "></td>
-		<td><br/><a href = "panier.php?action=suppression&amp;l=<?php echo rawurlencode($_SESSION['panier']['nomPlat'][$i]);?>">Supprimer le plat<a/></td>
-		</tr>
-		
-		
-		
-		
-		<?php       
-	}?>
 	
-	<tr>
-		<td>
+		<form method="post" action="">
+
+		<table >
+			<tr>
+				<td><label for="start">Vos plat du :</label>
+
+					<input type="date" id="d" name="d"
+					value="2020-04-20"
+					min="2020-01-01" max="2020-12-31">
+				</td>
+				<td><input class="petit" type="submit" value="ok">
+				</td>
+			</tr>
+		</table>
+		<?php
+		if(isset($_POST['d'])){
+			echo $_POST['d'];}
+		?>
+ 
+		<table border=1>
+			<tr>
+				<td>plats (100g)</td>
+				<td>calories</td>
+				<td>quantité</td>
+				<td>action</td>
+			</tr>
+		<?php
+		for($i=0;$i<$nbplats;$i++){
+			?>
+		
+			<tr>
+				<td><br/><?php echo $_SESSION['panier']['nomPlat'][$i];?></td>
+				<td><br/><?php echo $_SESSION['panier']['calPlat'][$i];?></td>
+				<td><br/><input name="q[]"  value="<?php echo $_SESSION['panier']['quantPlat'][$i];?> "></td>
+				<td><br/><a href = "panier.php?action=suppression&amp;l=<?php echo rawurlencode($_SESSION['panier']['nomPlat'][$i]);?>">Supprimer le plat<a/></td>
+			</tr><?php       
+		}?>
+	
+	
 		<input type="hidden" name="action" value="refresh"/>
-		</td>
-		</tr>
+		
+		
 		
 		</table>
+		
+		<div>
 		
 		<h2>Votre cumul des plats est-t-il équilibré ? </h2> </br>
 		
@@ -213,14 +201,17 @@ echo $_POST['d'];}
 		<p> total calorie :<?php echo calPanier();?></p>
 		<?php 
 		if(isset($_POST['d'])){
-		$d= $_POST['d'];
-		$calT=calPanier();?>
-		<a href="p.php?act=ajout&amp;d=<?php echo  $d;?>&amp;c=<?php echo  $calT;?>">ENREGISTRER </a> <?php } ?>
+			$d= $_POST['d'];
+			$calT=calPanier();?>
+			<a href="p.php?act=ajout&amp;d=<?php echo  $d;?>&amp;c=<?php echo  $calT;?>">ENREGISTRER </a> <?php 
+		} ?>
 		
+		</div> 
 		<input type ="submit" value="recalculer"/>
 		
-		<a href="?deletepanier=true">supprimer le panier</a>
-		<a href="etape3.php">ajouter d'autres plats </a>
+		<a href="?deletepanier=true">supprimer le panier  </a>
+		&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="etape3.php"> ajouter d'autres plats </a>
 		
 		<?php
 	
@@ -228,11 +219,11 @@ echo $_POST['d'];}
 	
 }
 
-
-
 ?>
-</table>
+	</table>
 </form>
+
+</section>
 
 
 <footer>

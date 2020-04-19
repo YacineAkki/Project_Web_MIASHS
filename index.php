@@ -16,59 +16,74 @@ session_start();
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.php"><img src="ressources/logo.png" alt="description" id="logo"></a>
-        </div>
-        <div class="container-menu-nav">
-            <nav class="top-menu-nav">
-
-
-                <ul class="top-menu">
-                    <li><a href="index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
-					<li><a href="templates/platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
-                    <li><a href="templates/test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
-                    <li><a href="templates/apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
-                    <li><a href="templates/contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                    <li id="nav-moncompte"><a href="templates/Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-                    <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
-                </ul>
+   <header>
+            <div class="logo-container">
+                <a href="index.php"><img src="ressources/logo.png" alt="description" id="logo"></a>
+            </div>
+                <div class="container-menu-nav">
+                    <nav class="top-menu-nav">
+                        <ul class="top-menu">
+                            <li><a href="index.php" class="link">Accueil <i class="fa fa-home" aria-hidden="true"></i></a></li>
+							<li><a href="templates/platsJournée/etape3.php" class="link">calorie<i class="fa fa-columns" aria-hidden="true"></i></a></li>
+                            <li><a href="templates/test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
+                            <li><a href="templates/apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+                            <li><a href="templates/contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
+							
+                       <?php
+            if(isset($_SESSION['user'])){
 
                 
-            </nav>
-            <div class="toggle"><span></span></div>
-        </div>
-    </header>
+         ?> <li id="nav-moncompte"><a href= "templates/Connexion.php" class="link"> <?php echo $_SESSION['user'][2];?><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li> 
+                
+           <?php }else{?>
+			
+			<li id="nav-moncompte"><a href="templates/Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+			<?php 
+			} 
+    ?>
+	<li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
+	</ul>
+                    </nav>
+                <div class="toggle"><span></span></div>
+            </div>
+        </header>
 
     <section>
-        <h1> Bonjour, notre site a pour but de vous aider à améliorer votre santé. </h1> <br>
-		<table >
-		<tr>
- <td>
- <a href="templates/platsJournée/etape3.php" ><img  id="grand" onmouseover="overParagraphe('grand')" onmouseout= "outParagraphe('grand')" src="ressources/cal.png" width="300"></a></td>
- <td>____</td>
- <td><a href="templates/test.php" ><img  id="2" onmouseover="overParagraphe('2')" onmouseout= "outParagraphe('2')" src="ressources/test.jpg" width="300" ></a></td>
- </tr>
+		<div>
+			<h1 > Bonjour, notre site a pour but de vous aider à améliorer votre santé. </h1> 
+		</div>
+		
+		<div>
+			<table width=500px; >
+				<tr>
+					<td>
+						<a href="templates/platsJournée/etape3.php" ><img  id="grand" onmouseover="overParagraphe('grand')" onmouseout= "outParagraphe('grand')" src="ressources/cal.png" width="300"></a>
+					</td>
+					<td>
+					
+					</td>
+					<td><a href="templates/test.php" ><img  id="2" onmouseover="overParagraphe('2')" onmouseout= "outParagraphe('2')" src="ressources/test.jpg" width="300" ></a></td>
+				</tr>
  
- <tr>
- <td><p><h1 class="lienTest"><a href="templates/journéePlats/etape3.php" class="liens">Calculer les calories </a></h1></br></p>
-<p> Vous pouvez ici selectionner les plats que vous avez mangé à une date donnée. </p></br>
- <p>Ainsi vous pourrez voir les calories de chacuns des plats.Et un calcul du nombre de calorie que vous avez consommé durant cette journée sera effectué.</p>
+				<tr>
+					<td>
+						<h1 class="lienTest"><a href="templates/journéePlats/etape3.php" class="liens">Calculer les calories </a></h1>
+							<p> Vous pouvez ici selectionner les plats que vous avez mangé à une date donnée. </p></br>
+							<p>Ainsi vous pourrez voir les calories de chacuns des plats.Et un calcul du nombre de calorie que vous avez consommé durant cette journée sera effectué.</p>
  
-<p>Toutes les journées que vous enregistrerez seront stocké dans une base de donnée.</br></p>
-<p>vous pourrez donc avoir un suivi des calories que vous avez consommé au fil des jours.</p> 
- </td>
- 
- <td></td>
- 
- <td>
-        <p> <h1 class="lienTest"><a href="templates/test.php" class="liens"> Faire le test</a> </h1> </br> En effet, pour y parvenir, vous pouvez calculer votre indice pondéral et nous vous indiquerons si vous devez perdre, gagner ou maintenir votre poids. </p> <br>
-        <p> A la suite de cette indication, nous calculerons la quantité de calories nécessaire à votre organisme pour tenir toute une journée. Suite à cela, nous vous proposerons la quantité de calories à consommer chaque jour pour améliorer votre santé. </p> <br>
-        <p> Vous pourrez ensuite consulter nos différents plats afin de composer des repas équilibrés adaptés a votre régime. </p>
-   </td>
-   </tr>
+							<p>Toutes les journées que vous enregistrerez seront stocké dans une base de donnée.</br></p>
+							<p>vous pourrez donc avoir un suivi des calories que vous avez consommé au fil des jours.</p> 
+					</td>
+					<td>
+					</td>
+					<td>
+						<h1 class="lienTest"><a href="templates/test.php" class="liens"> Faire le test</a> </h1> 
+							<p>En effet, pour y parvenir, vous pouvez calculer votre indice pondéral et nous vous indiquerons si vous devez perdre, gagner ou maintenir votre poids.  <br> A la suite de cette indication, nous calculerons la quantité de calories nécessaire à votre organisme pour tenir toute une journée. Suite à cela, nous vous proposerons la quantité de calories à consommer chaque jour pour améliorer votre santé. </p> 
+							<p> Vous pourrez ensuite consulter nos différents plats afin de composer des repas équilibrés adaptés a votre régime. </p>
+					</td>
+				</tr>
    
-   </table>
+			</table>
    <?php
             if(isset($_SESSION['user'])){
 

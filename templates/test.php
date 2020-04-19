@@ -20,9 +20,9 @@ session_start();
         <script src="../scripts/app.js" type="text/javascript"></script>
 	</head>
 	<body>
-		<header>
+	  <header>
             <div class="logo-container">
-                <a href="../../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
+                <a href="../index.php"><img src="../ressources/logo.png" alt="description" id="logo"></a>
             </div>
                 <div class="container-menu-nav">
                     <nav class="top-menu-nav">
@@ -32,12 +32,25 @@ session_start();
                             <li><a href="test.php" class="link">Test <i class="fa fa-list" aria-hidden="true"></i></a></li>
                             <li><a href="apropos.php" class="link">A propos <i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
                             <li><a href="contact.php" class="link">Contact <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                            <li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-                            <li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
-                        </ul>
-                    </nav>
-                <div class="toggle"><span></span></div>
-            </div>
+							
+							<?php
+							if(isset($_SESSION['user'])){
+
+                
+								?> <li id="nav-moncompte"><a href= "Connexion.php" class="link"> <?php echo $_SESSION['user'][2];?><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li> 
+                
+								<?php 
+								}else{?>
+			
+									<li id="nav-moncompte"><a href="Connexion.php" class="link">Mon Compte <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+									<?php 
+								} 
+							?>
+							<li id="lang"><a><i class="fa fa-globe" aria-hidden="true"></i> FR <span id="eur">(EUR)</span></a></li>
+							</ul>
+							</nav>
+				<div class="toggle"><span></span></div>
+			</div>
         </header>
     	<section>
 		<form action="enregistrementTest.php" method="get" autocomplete="off">
