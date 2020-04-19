@@ -32,8 +32,22 @@ footer{
     margin-left: 150px;
 }
 
+.contactEquipe h3{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 .contactUniv{
     margin-right: 170px;
+}
+
+.contactUniv h3{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contactUniv ul{
+    margin-bottom: 60px;
 }
 #listfooterright{
     margin-right: 140px;
