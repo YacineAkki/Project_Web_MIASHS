@@ -64,7 +64,6 @@ if(!isset($_SESSION)){
                             <li>Yacine Akki : Yacine.Akki@etu.univ-montp3.fr</li><br>
                             <li>Johanna Fricon : Johanna.Fricon@etu.univ-montp3.fr</li><br>
                             <li>Justin Celestin : justine.celestin@etu.univ-montp3.fr</li><br>
-                            <li>Justin Celestin : Justine.celestin@etu.univ-montp3.fr</li><br>
                             <li>Berk Kayin : Berk.Kayin@etu.univ-montp3.fr</li>
                         </ul>
                         <img src="../ressources/contact-us.png">
