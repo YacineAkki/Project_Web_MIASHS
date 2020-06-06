@@ -1,0 +1,26 @@
+.titre1 {
+	margin-left: 30px;
+	margin-top: 50px;
+	margin-bottom: 15px;
+	font-family: "Arial Black";
+	font-size: 1.2em;
+	color: green;
+	
+}
+
+#info {
+	margin-left: 20px;
+	margin-bottom: 15px;
+	font-family: "calibri";
+	font-size: 1.1em;
+	color: red;
+}
+
+.parties {
+	margin-left: 10px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	font-family: "AR BLANCA";
+	font-size: 1.2em;
+	color: blue;
+}
