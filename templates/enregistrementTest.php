@@ -9,6 +9,7 @@ session_start();
 		<meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="test.js"></script>
 		<link rel="stylesheet" href="../style/test.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="../style/testpropositions.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="../style/model.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="../scripts/jquery-3.4.1.min.js"></script>
@@ -266,15 +267,11 @@ session_start();
 
 
 					echo "Vous pouvez maintenant aller dans la rubrique  Calorie, pour analyser votre alimentation !   Hop là! C'est juste un tout petit peu plus haut! ";
-					echo"<br/>";
-					echo"<br/>";
-					echo"<br/>";
 					
 					
 					//On donne des propositions de repas à l'utilisateur par rapport à son $QBC
 					
-					echo '<li>Nos propositions pour le petit déjeuner par rapport à votre quantité de calories idéale :</li>';
-					echo"<br/>";
+					echo '<li class="titre1">Nos propositions pour le petit déjeuner par rapport à votre quantité de calories idéale :</li>';
 					$bdd=  new PDO('mysql:host=localhost;dbname=heathyYou;charset=utf8','root', '');
 					$requete = $bdd->query("SELECT * FROM platboisson WHERE nomGroupe = 'céréales de petitNAdéjeuner et biscuits' AND Energie BETWEEN $QBC*0.200 AND $QBC*0.220 ORDER BY idP ");
 					while ($resultat = $requete->fetch()){
@@ -291,16 +288,9 @@ session_start();
 						echo"<br/>";
 					}
 					
-					echo"<br/>";
-					echo"<br/>";
-					echo '<li>Nos propositions pour le déjeuner ou le diner par rapport à votre quantité de calories idéale :</li>';
-					echo"<br/>";
-					echo '(Vous pouvez choisir un repas que vous aimez pour chaque partie et faire une combinaison idéale pour votre santé)';
-					echo"<br/>";
-					echo"<br/>";
-					echo 'Nos propositions pour les légumes :';
-					echo "<br/>";
-					echo "<br/>";
+					echo '<li class="titre1">Nos propositions pour le déjeuner ou le diner par rapport à votre quantité de calories idéale :</li>';
+					echo '<p id="info">(Vous pouvez choisir un repas que vous aimez pour chaque partie et faire une combinaison idéale pour votre santé)</p>';
+					echo '<p class="parties">Nos propositions pour les légumes :</p>';
 					$requete = $bdd->query("SELECT * FROM platboisson WHERE nomGroupe = 'légumes' AND Energie BETWEEN $QBC*0.040 AND $QBC*0.050 ORDER BY idP");
 					while ($resultat = $requete->fetch()){
 						echo  $resultat['nomPlat']."&nbsp; &nbsp; &nbsp;";
@@ -315,10 +305,7 @@ session_start();
 						echo 'kcal';
 						echo"<br/>";
 					}
-					echo "<br/>";
-					echo 'Nos propositions pour les repas protéinés :';
-					echo "<br/>";
-					echo "<br/>";
+					echo '<p class="parties">Nos propositions pour les repas protéinés :</p>';
 					$requete = $bdd->query("SELECT * FROM platboisson WHERE nomGroupe = 'poissons cuits' AND Energie BETWEEN $QBC*0.110 AND $QBC*0.120 ORDER BY idP");
 					while ($resultat = $requete->fetch()){
 						echo  $resultat['nomPlat']."&nbsp; &nbsp; &nbsp;";
@@ -347,10 +334,7 @@ session_start();
 						echo 'kcal';
 						echo"<br/>";
 					}
-					echo "<br/>";
-					echo 'Nos propositions pour les repas féculents :';
-					echo "<br/>";
-					echo "<br/>";
+					echo '<p class="parties">Nos propositions pour les repas féculents :</p>';
 					$requete = $bdd->query("SELECT * FROM platboisson WHERE nomGroupe = 'pâtes, riz et céréales' AND Energie BETWEEN $QBC*0.060 AND $QBC*0.070 ORDER BY idP");
 					while ($resultat = $requete->fetch()){
 						echo  $resultat['nomPlat']."&nbsp; &nbsp; &nbsp;";
@@ -365,10 +349,7 @@ session_start();
 						echo 'kcal';
 						echo"<br/>";
 					}
-					echo "<br/>";
-					echo 'Nos propositions pour les fruits :';
-					echo "<br/>";
-					echo "<br/>";
+					echo '<p class="parties">Nos propositions pour les fruits :</p>';
 					$requete = $bdd->query("SELECT * FROM platboisson WHERE nomGroupe = 'fruits' AND Energie BETWEEN $QBC*0.030 AND $QBC*0.035 ORDER BY idP");
 					while ($resultat = $requete->fetch()){
 						echo  $resultat['nomPlat']."&nbsp; &nbsp; &nbsp;";
@@ -376,10 +357,7 @@ session_start();
 						echo 'kcal';
 						echo"<br/>";
 					}
-					echo "<br/>";
-					echo 'Nos propositions pour les desserts :';
-					echo "<br/>";
-					echo "<br/>";
+					echo '<p class="parties">Nos propositions pour les desserts :</p>';
 					$requete = $bdd->query("SELECT * FROM platboisson WHERE nomGroupe = 'gâteaux et pâtisseries' AND Energie BETWEEN $QBC*0.130 AND $QBC*0.150 ORDER BY idP");
 					while ($resultat = $requete->fetch()){
 						echo  $resultat['nomPlat']."&nbsp; &nbsp; &nbsp;";
